@@ -1,0 +1,30 @@
+---
+title: "Managing the Unexpected"
+date: "2013-09-05"
+categories: 
+  - "books"
+tags: 
+  - "books"
+---
+
+I recently read [Managing the Unexpected](http://www.amazon.com/Managing-Unexpected-Resilient-Performance-Uncertainty/dp/0787996491). It's a brilliant book about running highly resilient organisations. While it's mostly based on high-risk organisations like nuclear power plants and wild fire firefighting units, it's still highly applicable to any company just trying to increase their resiliency to failures and outages.
+
+A lot of the points in the book fall into that "that sounds so obvious" category after you read it, but I think those are the best kind as they help clarify information you weren't able to and give you a good way to communicate them with your colleagues. Still plenty in there to give you something new to think about too. The first half of the book discusses five principals they feel all highly resilient organisations need to follow, while the second half goes over ways to introduce them to your organisation, complete with rating systems for how you function now.
+
+The five main principals the book harps on are (the first three are for avoiding incidents, while the last two are for dealing with them when they occur):
+
+- **Tracking small failures** - don't let errors slip through the cracks and go unnoticed.
+- **Resisting oversimplification** - don't simply write off errors as "looking like the same one we see all the time", but investigate them.
+- **Remaining sensitive to operations** - employees working on the front line are more likely to notice something out of the ordinary, which could indicate an impending failure. Listen to them.
+- **Maintaining capabilities for resilience** - shy away from removing things that'll keep resilience in your system when there's an outage.
+- **Taking advantage of shifting locations of expertise** - don't leave all decision making power in the hands of managers that may be separated from the incident. Let front line members call the shots.
+
+Here's some of my favourite bits of wisdom from the book:
+
+- _"... try to hold on to those feelings and resist the temptation to gloss over what has just happened and treat it as normal. In that brief interval between surprise and successful normalizing lies one of your few opportunities to discover what you don't know. This is one of those rare moments when you can significantly improve your understanding. If you wait too long, normalizing will take over, and you'll be convinced that there is nothing to learn."_ (pg 31) There's been too many times in the past I've been involved in system outages where everyone goes into panic mode, gets the problem solves, but then sits around afterwards going "yea, it was just because of that usual x or y issue that we know about". It's about digging in and never assuming a failure was because of a known situation (lying to yourself). Dig in and find out what happened with a blank slate after each failure. Keep asking why.
+- _"Before an event occurs, write down what you think will happen. Be specific. Seal the list in an envelope, and set it aside. After the event is over, reread your list and assess where you were right and wrong."_ (pg 49) Basically following the scientific method. Setup a null hypothesis with expectations that you can check after an event (software upgrade, new feature, added capacity, etc). It's definitely not something I'm used to, but trying to build it into my work flow. I love the idea of [Etsy's Catapult tool](http://www.slideshare.net/mwalkerinfo/data-daytexas2013) where they setup expectations for error rates, client retention, etc before releasing a feature, then do A/B testing to show it met or failed each criteria.
+- _"Resilience is a form of control. 'A system is in control if it is able to minimize or eliminate unwanted variability, either in its own performance, in the environment, or in both... The fundamental characteristic of a resilient organization is that it does not lose control of what it does but is able to continue and rebound.'"_ (pg 70) - Don't build highly resilient applications assuming they'll never break, but instead assume that each and every piece will break or slow down at some point (even multiple together) and design your app to deal with it. We've built our streaming platform to assume everything will break, even our dependencies on other internal teams, and we'll just keep going as best we can when they're down and bounce back after.
+- _"Every unexpected event has some resemblance to previous events and some novelty relative to previous events. \[...\] The resilient system bears the marks of its dealings with the unexpected not in the form of more elaborate defences but in the form of more elaborate response capabilities."_ (pg 72) - When you have an outage and determine the root cause, don't focus on fixing that one specific error from ever happening again. Instead, try to build resilience into the system to stop that class of problem from having affects in the future. If your cache throwing a specific error was the root cause, for instance, build the system to handle any error from the cache rather than that specific one, and increase metrics around these to respond faster in the future.
+- _"Clarify what constitutes good news. Is no news good news, or is no news bad news? Don't let this remain a question. Remember, no news can mean either that things are going well or that someone is \[...\] unable to give news, which is bad news. Don't fiddle with this one. No news is bad news."_ (pg 152) - If your alerting system hasn't made a peep for a few days, it's probably a bad thing. Some nominal level of errors will always be common, and if you're hearing nothing it's an error. Never assuming your monitoring and alerting systems are working smoothly!
+
+Overall the book is an excellent read. A bit dense in writing style at time, but I'd recommend it if you're working on a complex system that demands uptime in the face of shifting requirements and operating conditions.

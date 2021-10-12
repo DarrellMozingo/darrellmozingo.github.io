@@ -1,0 +1,41 @@
+---
+title: "Cleveland Day of .NET Review"
+date: "2008-05-20"
+categories: 
+  - "reviews"
+tags: 
+  - "reviews"
+---
+
+![Cleveland Day of .NET](images/CDoDN.png)I attended the first annual Cleveland Day of .NET this past Saturday, the 17th. Other than a few Microsoft launch-type events, I've never attended an actual community get together like this before, so it was a new experience for me.
+
+Do I think it was worth it, in terms of the time (7 AM to 6:30 PM on a Saturday with decent weather) and money (gas for a 100 mile round trip and lunch) invested? Well, lets take a look at each of the six presentations I attended and then at an overview of the whole event:
+
+1. **Why Ruby?** - [Joe O'Brien](http://www.objo.com/)
+    - Joe started off by saying this wouldn't be a talk about specifics in Ruby or a 100 level intro, and he delivered on that. Instead, he focused on some neat features of Ruby that'd make a seasoned developer want to dabble with it and potentially jump ship. I've seen a bit of Ruby glancing through blogs and articles, and even wrote one or two _very_ basic learning applications in it, so I was glad he skipped the syntax basics and instead focused on things such as catching missing methods and then relating that to O/RM and enterprise development uses.Ultimately, I thought this was a great talk. Joe was quite the funny presenter, kept me engaged the whole time, recovered very gracefully from a few presentation hiccups, showed some neat examples, and renewed my appetite for Ruby. It was a nice presentation to start out the day, for sure.
+2. **Introduction to Test Driven Development with the ASP.NET MVC Framework** - [Alan Stevens](http://netcave.org/)
+    - Alan began with an intro to the ASP.NET MVC Framework and followed up with a few live coded unit tests. While I liked his presentation style (his excitement for this stuff was contagious), I wasn't too impressed with the content. It was very solid information, but I had some higher expectations going in, and he only got around to doing basic unit tests to check the rendered view and such things. Nothing really new for me there, unfortunately, but it was still nice to hear the MVC architectural pattern explained from a different point of view.
+3. **Software Ninjitsu: Designing for Change** - [Nate Kohari](http://kohari.org/)
+    - Focusing on the foundation of object design - cohesion and coupling - then moving onto the basics of Inversion of Control (IoC) using his Dependency Injection (DI) framework, [Ninject](http://ninject.org/) (which I've looked at before and is actually pretty neat), Nate delivered an awesome presentation. Admittedly his first large one, he handled a failing projector halfway through the presentation with ease, and the room was packed with standing room only. He touched briefly on a few other aspects of his framework such as Aspect Oriented Programming (AOP), but he stuck to the basics of IoC very well and presented them, at least I thought, in a very logical fashion. His gratuitous use of ninja references was actually pretty funny (although you couldn't expect anything less with a session title like that) and was a nice change of pace.The _only_ thing I would have liked to see was some more live code. He stuck to Power Point (or whatever the Mac equivalent he was using was) pretty good, though a bit of Visual Studio and bigger examples might have helped a bit, I think. Overall it was a great presentation though.
+4. **Ouch, that hurt! Lessons Learned from an Agile Project** - [Michael Eaton](http://michaeleatonconsulting.com/blog/)
+    - I was looking forward to this session the most. My team is currently shifting into a RUP/Agile methodology (and actually had a nice 2 hour discussion on this the Friday before this event), so I asked Michael if I could tape the talk with the hopes of showing it to the rest of my team when I got back to work. It was a good talk, reminding everyone about the major pain points in project management: communication, buy-in, estimating, etc. Some were client specific while some were more common. It spurred some interesting discussion from the crowd though, and Michael's slide deck was a pretty funny addition. Also, while I could also see where he was coming from in the talk, the fact that he concentrated on one single job as an example, out of the many I'm sure he's worked on, made parts of the presentation seem like a rant instead being informational.Unfortunately, in the end the presentation wasn't exactly what I'd thought it'd be. While we did hit a lot of common pain points, to me they weren't really related to, or caused by, any particular Agile methodology. They were just general issues that most everyone - including my team - has dealt with in the past. Helpful to be sure, but I was looking for issues relating specifically to a flavor of Agile, such as TDD acceptance, short iteration deliverables, pair-programming acceptance, stand-up meeting issues, planning problems, etc.
+5. **Data Access with NHibernate** - [Len Smith](http://geekswithblogs.net/ignu/Default.aspx)
+    - Len started off with a quick intro to O/RMs in general and why you'd want to use one, then jumped into talking about various aspects of NHibernate interlaced with live code examples. His examples were pretty decent, using unit tests as quick code harnesses to show off various features like batch queries, lazy loading, SQL query inspection, etc. Pretty standard stuff, and I thought he did a good job explaining it, along with answering a few questions that popped up through the session such as the ability to use NHibernate along side current data access code during a transition period (to which Len just suggested rewriting your data layer). Like Nate Kohari's talk, he used a lot of pirate and ninja references which I thought was pretty cool.
+6. **Intro to the IronPython Flying Circus** - [Sarah Dutkiewicz](http://www.codinggeekette.com)
+    - Sarah began by making a case for Python then jumping right into some examples of IronPython, using gratuitous amounts of Monty Python references of course (Ni!). She showed a few basic features of Python and IronPython using the interactive command line tool, including how to use those little animated people from the Windows XP first install wizard. She did a really good job presenting a high-level overview of the features, I thought.
+
+There's a few other presentations that sounded really interesting and I would have loved to see, and in hindsight I should have floated between some of these sessions to get in a little more more material. I'll have to keep that in mind for next time.
+
+1. **Silverlight in ASP.NET** \- [John Stockton](http://tocode.blogspot.com/)
+2. **IronRuby, the DLR and Silverlight** \- [Carey Payette](http://adanacp.spaces.live.com/)
+3. **A Look at F#** \- [Amanda Laucher](http://www.pandamonial.com/)
+
+Now, as for the event as a whole I'd have to give it a thumbs up. Everyone got a free, decent quality, tee-shirt upon sign-in, which was neat (standard logo + sponsors white tee). They were giving away books in nearly all the sessions for various reasons, and also gave out licenses to some nice software and an XBox 360 at the end, but I didn't win anything :(
+
+I met a few people there from the Akron area, though I wished I would have networked a bit more. As Michael Eaton put in his review, the small hallways and constant moving of hotel staff made it tough to talk to anyone between sessions.
+
+Attending this event has also peaked my interested in presenting on a topic at some point, perhaps starting with one to my co-workers (though I sort of did one on Linq To SQL a while ago). I'd love to have something to present, and the ability to do it, at a future event like this.
+
+Overall I thought the event was well worth the time and money invested (it being free and getting free swag sure helped). I met some nice people and picked up a lot of new information, and I'm looking forward to attending next year.
+
+Too bad Cleveland is the nearest .NET user group, and they usually start at like 6 PM, as I'd love to attend a few of those but scheduling is usually too tuff. That's why I'd like to get the ball rolling on the [CantonALT.NET](http://cantonalt.net) user group, so we can spark some local discussion and interest.

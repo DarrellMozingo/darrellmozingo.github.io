@@ -11,13 +11,13 @@ Strong encryption algorithms are well known and widely available in most languag
 
 Historically one of the more secure, though expensive, options for key security was a [hardware security module](https://en.wikipedia.org/wiki/Hardware_security_module) (HSM - you may have seen one make a recent appearance on [Mr. Robot](https://en.wikipedia.org/wiki/Mr._Robot)!). In the cloud world we have [CloudHSM](https://aws.amazon.com/cloudhsm) and [AWS Key Management Service](https://aws.amazon.com/kms) (KMS). KMS is essentially CloudHSM with some extra resiliency handled by AWS, and offered for a cheaper price via shared HSM tenanting.
 
-The main idea behind KMS (and its underlying HSM functionality) is that the master key **never** leaves its system boundary. You send the raw data that you want encrypted to KMS, along with an identifier of which key you want to use, then it does its maths magic and returns some encrypted gibberish. This architecture greatly simplifies what you need to think about with regards to potential attack vectors and securing the master keys. KMS is fully [PCI DSS compliant](https://en.wikipedia.org/wiki/Payment_Card_Industry_Data_Security_Standard) and they have a [detailed whitepaper](https://d0.awsstatic.com/whitepapers/KMS-Cryptographic-Details.pdf) describing their various algorithms and internal audit controls to safeguard master keys, if you want to geek out over it ![(smile)](images/smile.png "(smile)") AWS also offer a [best practices guide](https://d0.awsstatic.com/whitepapers/aws-kms-best-practices.pdf) which we've followed quite closely through all this work.
+The main idea behind KMS (and its underlying HSM functionality) is that the master key **never** leaves its system boundary. You send the raw data that you want encrypted to KMS, along with an identifier of which key you want to use, then it does its maths magic and returns some encrypted gibberish. This architecture greatly simplifies what you need to think about with regards to potential attack vectors and securing the master keys. KMS is fully [PCI DSS compliant](https://en.wikipedia.org/wiki/Payment_Card_Industry_Data_Security_Standard) and they have a [detailed whitepaper](https://d0.awsstatic.com/whitepapers/KMS-Cryptographic-Details.pdf) describing their various algorithms and internal audit controls to safeguard master keys, if you want to geek out over it :) AWS also offer a [best practices guide](https://d0.awsstatic.com/whitepapers/aws-kms-best-practices.pdf) which we've followed quite closely through all this work.
 
 **Envelope Encryption**
 
 The challenge with KMS is it limits you to encrypting only 4kB of data for performance reasons (you don't want to send it a 2MB file to encrypt!). That's fine if you're encrypting smaller strings like passwords, but for larger amounts of data you have to use a pattern known as [envelope encryption](http://docs.aws.amazon.com/kms/latest/developerguide/workflow.html). Here's the encryption flow:
 
-[![](images/Selection_003.jpg)](http://darrell.mozingo.net/wp-content/uploads/2018/01/Selection_003.jpg)
+![](/assets/2018/Selection_003.jpg)
 
 1. Ask KMS for a new data-key, specifying which master key you want to use
 2. Get back both the clear-text data key, and that same key in an encrypted form using your specified master key
@@ -30,7 +30,7 @@ Notice that we ask KMS for a new data-key for each encryption operation, so ever
 
 Decryption is basically the reverse of the above:
 
-[![](images/Selection_002.jpg)](http://darrell.mozingo.net/wp-content/uploads/2018/01/Selection_002.jpg)
+![](/assets/2018/Selection_002.jpg)
 
 1. Retrieve the encrypted data-key and your encrypted data from your data store
 2. Ask KMS to decrypt the small encrypted data-key using the specified master key
@@ -55,7 +55,7 @@ Encryption Context is a plaintext key/value pair that is stored, in the clear, a
 
 We have some super secure encryption with all the above bits, but it does us no good if KMS itself is down, unreachable, or unacceptably slow in a given region. Users wouldn't be able to create, update, or read any of their personal information! Remember also that the master key, which ultimately encrypts all of our data-keys, **can not** leave a given KMS' regional boundary, so two different regions can never have the same master key for us to rely on. How can we support failover without duplicating the encrypted text in each region, and therefore increasing our storage costs? It's envelope encryption back to save the day!
 
-[![](images/Selection_004.jpg)](http://darrell.mozingo.net/wp-content/uploads/2018/01/Selection_004.jpg)
+![](/assets/2018/Selection_004.jpg)
 
 1. Ask our local KMS for a data-key, just like we did for encyrption in the previous diagrams
 2. Send that clear-text data-key to _n_ other remote regions KMS regions, asking each of them to encrypt only the small data-key with their own master key

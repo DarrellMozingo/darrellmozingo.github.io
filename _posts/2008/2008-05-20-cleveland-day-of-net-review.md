@@ -7,7 +7,7 @@ tags:
   - "reviews"
 ---
 
-![Cleveland Day of .NET](images/CDoDN.png)I attended the first annual Cleveland Day of .NET this past Saturday, the 17th. Other than a few Microsoft launch-type events, I've never attended an actual community get together like this before, so it was a new experience for me.
+![Cleveland Day of .NET](/assets/2008/CDoDN.png)I attended the first annual Cleveland Day of .NET this past Saturday, the 17th. Other than a few Microsoft launch-type events, I've never attended an actual community get together like this before, so it was a new experience for me.
 
 Do I think it was worth it, in terms of the time (7 AM to 6:30 PM on a Saturday with decent weather) and money (gas for a 100 mile round trip and lunch) invested? Well, lets take a look at each of the six presentations I attended and then at an overview of the whole event:
 

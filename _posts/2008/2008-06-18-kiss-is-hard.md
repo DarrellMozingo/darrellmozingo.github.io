@@ -7,7 +7,7 @@ tags:
   - "testing"
 ---
 
-![KISS Logo](images/kisslogo.png "KISS Logo")No, I'm not referring to [the band](http://en.wikipedia.org/wiki/Kiss_(band)), but [the KISS principle](http://en.wikipedia.org/wiki/KISS_principle) (Keep It Simple, Stupid), and its close cousin, the idea of [YAGNI](http://en.wikipedia.org/wiki/You_Ain%27t_Gonna_Need_It) (You Ain't Gonna Need It).
+![KISS Logo](/assets/2008/kisslogo.png "KISS Logo")No, I'm not referring to [the band](http://en.wikipedia.org/wiki/Kiss_(band)), but [the KISS principle](http://en.wikipedia.org/wiki/KISS_principle) (Keep It Simple, Stupid), and its close cousin, the idea of [YAGNI](http://en.wikipedia.org/wiki/You_Ain%27t_Gonna_Need_It) (You Ain't Gonna Need It).
 
 They're hard. Sure, they might seem easy at first glance, but they are both deceptively hard. This is especially true if you have any sort of background in your problem domain, and let's face it, most of us do if we're writing the usual problem tracking or invoice tracking applications. You know what I'm talking about: you start with an empty solution in front of you, tasked with creating your companies next, say, customer management system, and you start walking through the new application in your mind.
 

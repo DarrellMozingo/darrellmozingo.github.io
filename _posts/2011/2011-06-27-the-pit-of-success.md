@@ -7,7 +7,7 @@ tags:
   - "design-principles"
 ---
 
-![Pit of Success](images/pit-of-success.jpg "Pit of Success")
+![Pit of Success](/assets/2011/pit-of-success.jpg "Pit of Success")
 
 I'm a **huge** believer in the Pit of Success. Quite a few have written [about](http://blogs.msdn.com/b/brada/archive/2005/10/07/478375.aspx) [it](http://www.codinghorror.com/blog/2007/08/falling-into-the-pit-of-success.html) [before](http://blogs.msdn.com/b/brada/archive/2003/10/02/50420.aspx), though not always in development terms. Put simply, there's two pits you can create in your application through conventions, infrastructure, culture, tools, etc: success and failure. I obviously choose the former.
 

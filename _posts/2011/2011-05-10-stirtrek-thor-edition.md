@@ -7,7 +7,7 @@ tags:
   - "events"
 ---
 
-![thor](images/thor.png "thor")
+![thor](/assets/2011/thor.png "thor")
 
 I went with a few co-workers to [Stir Trek](http://stirtrek.com) this past Friday. They've put an event on for the past two years, but this was the first one I've been to. It was an excellent event. Good talks, very well planned out, and a pretty decent movie to boot! Here's the talks I went to:
 

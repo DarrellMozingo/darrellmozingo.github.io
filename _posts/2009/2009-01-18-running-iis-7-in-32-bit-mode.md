@@ -15,14 +15,14 @@ So I set everything up, check out our project, fire up Visual Studio, hit debug,
 
 WTF? It was working fine on my old box. I recompiled our app after changing all the projects to explicitly compile in 32-bit mode and still got the error. As it turns out, IIS will, by default, run in 64-bit mode on a 64-bit box. Makes sense. If you open Task Manager, you can see that's how it works (note there's no \*32 next to the process name like all the other 32-bit apps that are running, like Fire Fox and Visual Studio):
 
-![Task Manager showing IIS 7 running in 64-bit mode.](images/taskmanager-64bit.png "taskmanager-64bit")
+![Task Manager showing IIS 7 running in 64-bit mode.](/assets/2009/taskmanager-64bit.png "taskmanager-64bit")
 
 So how do you tell IIS 7 to run in 32-bit mode? I found a terribly helpful post [here](http://blogs.msdn.com/rakkimk/archive/2007/11/03/iis7-running-32-bit-and-64-bit-asp-net-versions-at-the-same-time-on-different-worker-processes.aspx) that details of the situation (both a fix and the reasoning behind it). Basically, go into your IIS 7 manager console, find the application pool your app is running in, right-click on it, go to `Advanced Settings`, and change the `Enable 32-bit Applications` setting to `true`:
 
-![Editing the application pool properties in the IIS 7 Manager snap-in.](images/iismanager.png "iismanager")
+![Editing the application pool properties in the IIS 7 Manager snap-in.](/assets/2009/iismanager.png "iismanager")
 
 Now restart IIS (either via the snap-in or the command line w/`net stop w3svc` & `net start w3svc`) and you're good to go. Easy enough, right? Pop open Task Manager again and you should see a lovely \*32 next to the World Wide Web Worker Process (w3wp.exe), signifying that it's basically running in 32-bit compatibility mode:
 
-![Task Manager showing IIS 7 running in 32-bit mode.](images/taskmanager-32bit.png "taskmanager-32bit")
+![Task Manager showing IIS 7 running in 32-bit mode.](/assets/2009/taskmanager-32bit.png "taskmanager-32bit")
 
 Hopefully your app should load fine now. Well, at least mine did.

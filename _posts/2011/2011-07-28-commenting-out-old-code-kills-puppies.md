@@ -25,4 +25,4 @@ Those extra comment chunks are just crap to sift through to get to the real code
 
 So anyway, just remember what actually happens the next time you're about to comment out old code and **don't do it**, you'll be doing future programers (and more than likely yourself) a huge service...
 
-![Commenting code kills puppies](images/dead_puppies.jpg "Commenting code kills puppies")
+![Commenting code kills puppies](/assets/2011/dead_puppies.jpg "Commenting code kills puppies")

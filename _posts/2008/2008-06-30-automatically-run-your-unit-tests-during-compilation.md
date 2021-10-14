@@ -19,6 +19,6 @@ This statement assumes you have your project checked out to something like C:\\M
 
 Now your unit tests will be ran as a step in compiling your solution, and the compilation will fail if any of the unit tests fail:
 
-![](images/compilation-test-unit-run.png "Running Unit Tests on Compilation")
+![](/assets/2008/compilation-test-unit-run.png "Running Unit Tests on Compilation")
 
 Useful for smaller utility projects like this, but I imagine it'd become a pain in the ass for larger projects that take a bit of time to compile on there own, never mind having to run the unit tests on top of that every time. Sometimes you just want to see if the code compiles, not necessarily run all the tests too.

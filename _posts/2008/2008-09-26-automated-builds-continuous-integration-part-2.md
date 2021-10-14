@@ -11,7 +11,7 @@ In [Part 1](http://darrell.mozingo.net/2008/08/28/automated-builds-continuous-in
 
 ## Setting Up Your Project
 
-![Project Explorer](images/projectexplorer-buildscripts.png "Build Script Project Explorer")For a while now I've been creating an `Internal` folder under the main project, which has folders for the Tools (NAnt, MbUnit, etc), documentation (if needed), libraries, etc. This has been working out well, but I'm probably going to switch the method used by many open source projects, where the top level directory has a `src` (for your actual source code), `lib` (for reference assemblies), and `bin` (for tools) folders. See the image at the right for my current layout.
+![Project Explorer](/assets/2008/projectexplorer-buildscripts.png "Build Script Project Explorer")For a while now I've been creating an `Internal` folder under the main project, which has folders for the Tools (NAnt, MbUnit, etc), documentation (if needed), libraries, etc. This has been working out well, but I'm probably going to switch the method used by many open source projects, where the top level directory has a `src` (for your actual source code), `lib` (for reference assemblies), and `bin` (for tools) folders. See the image at the right for my current layout.
 
 Notice that those tools, NAnt/MbUnit/NCover/etc, are actually checked into the project. They're not sitting in my Program Files directory or on some network share. Each project has a copy of all the tools it needs (and everything those tools need to run), which enables not only the build server to pull down everything it needs from source control, but new developers as well. One checkout command and they're good to build and run the project. This is **definitely** a time saver, and, if nothing else, I highly recommend implementing this practice or one similar.
 
@@ -61,7 +61,7 @@ An optional last step is to create a batch file in the root of the project which
 
 Which runs through and results in a nice little "BUILD SUCCEEDED" message:
 
-![Build Script](images/buildresult-buildscripts.png "Build Script Running")
+![Build Script](/assets/2008/buildresult-buildscripts.png "Build Script Running")
 
 Gives me the warm and fuzzies every time.
 

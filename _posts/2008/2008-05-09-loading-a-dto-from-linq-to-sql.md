@@ -61,7 +61,7 @@ Also note the `SingleOrDefault()` call at the end, which will return a single ob
 
 As a side note, one of the neat features of Visual Studio 2008 is the IntelliSense's ability to filter the already assigned properties within the object initializer portion of the LINQ statement. For instance, notice how it's hiding the `FirstName` property in the pop-up since I assigned it in the line above:
 
-![IntelliSense filtering the available properites](images/dto-linq-to-sql-1.png)
+![IntelliSense filtering the available properites](/assets/2008/dto-linq-to-sql-1.png)
 
 To wrap up, here's the `CreatePerson` method, on the Person object in the business layer, that would consume the above `GetPerson` method:
 

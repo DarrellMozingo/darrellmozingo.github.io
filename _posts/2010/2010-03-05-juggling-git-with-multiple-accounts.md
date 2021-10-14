@@ -39,6 +39,6 @@ I'll walk you through doing this, assuming you don't already have an SSH key or 
 
 That should be it! Test it out by entering `ssh git@github.com`. You should see something like this:
 
-![Github SSH success](images/github_ssh_success.png)
+![Github SSH success](/assets/2010/github_ssh_success.png)
 
 So while it's definitely harder than not having to juggling multiple accounts, it's not as bad as it sounds. Know a better way to do this? Please let me know!

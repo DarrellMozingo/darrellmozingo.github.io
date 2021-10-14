@@ -52,7 +52,7 @@ So I whipped up Taskie. It handles all the boiler plate crud and eases deploymen
 
 That's it! Taskie is all setup and ready to roll. Running your console application with no command line arguments will show a usage screen listing any tasks that ready to run. Run the executable with "/run **Foo**" and it'll run whatever you have in the `Run` method on your `FooTask` class.
 
-![Taskie Usage Screen](images/sshot-1.png "Taskie Usage Screen")
+![Taskie Usage Screen](/assets/2010/sshot-1.png "Taskie Usage Screen")
 
 A few optional things you can do:
 

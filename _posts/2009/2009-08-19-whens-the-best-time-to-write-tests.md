@@ -11,7 +11,7 @@ I often hear people get apathetic about testing, especially on brown field appli
 
 Fear not, though, I have the perfect answer! It's actually a simple, definitive, mathematical proof. For a given application **A**, that has **x** lines of code and has been in development for **n** months with a client base of **C** clients, we derive the best time to start writing tests, **wt** as thus:
 
-![Right time to test equation](images/testing_time_equation.png "Right time to test equation")
+![Right time to test equation](/assets/2009/testing_time_equation.png "Right time to test equation")
 
 What'd I say? Simple.
 

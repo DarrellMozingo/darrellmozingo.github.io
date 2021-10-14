@@ -7,7 +7,7 @@ tags:
   - "musings"
 ---
 
-![Tools](images/hobbywoodworkingbig2.jpg "Tools")
+![Tools](/assets/2011/hobbywoodworkingbig2.jpg "Tools")
 
 How many carpenters do you think don't know about kerf widths? How many plumbers don't know the difference between MAPP and propane for soldering? Probably not many.
 

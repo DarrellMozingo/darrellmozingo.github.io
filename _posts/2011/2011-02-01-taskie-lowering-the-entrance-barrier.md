@@ -9,7 +9,7 @@ tags:
 
 One more step to lowering the entrance barrier for Taskie is complete:
 
-![Taskie NuGet Feed](images/taskie-live.png "Taskie NuGet Feed")
+![Taskie NuGet Feed](/assets/2011/taskie-live.png "Taskie NuGet Feed")
 
 Taskie is available on the official NuGet package feed. Build configurations are pending on [CodeBetter's TeamCity](http://teamcity.codebetter.com) server as well.
 

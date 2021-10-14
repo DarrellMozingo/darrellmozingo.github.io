@@ -40,7 +40,7 @@ alert("Error!!!");
 
 The HTML is cleared out and a default alert icon (from jQueryUI) is added via the class attribute `ui-icon-alert`. This allows us to create a standard `<div id="dialog"></div>` in our master page with nothing inside it, and reuse it for alert/confirm/prompt boxes. Then a standard alert call, like the one at the bottom, gives us:
 
-![Alert modal dialog](images/alert_modal.png "Alert modal dialog") vs ![Default alert](images/alert_default.png "Default alert")
+![Alert modal dialog](/assets/2011/alert_modal.png "Alert modal dialog") vs ![Default alert](/assets/2011/alert_default.png "Default alert")
 
 Similarly, we can override the default confirmation box. Here's a version that'll take the title, a message to show, and a callback function to execute if the user clicks "OK":
 
@@ -73,7 +73,7 @@ confirm("Are you sure?", "Are you sure you want to create a confirm?", function(
 
 Again, compare the results (the first question mark is an icon from jQuery UI, which can also be changed with the class written out in the confirm method above):
 
-![Modal Confirm](images/confirm_modal.png "Modal Confirm") vs ![Default Confirm](images/confirm_default.png "Default Confirm")
+![Modal Confirm](/assets/2011/confirm_modal.png "Modal Confirm") vs ![Default Confirm](/assets/2011/confirm_default.png "Default Confirm")
 
 Pretty neat, if you ask me. This whole thing is very [DRY](http://en.wikipedia.org/wiki/Don't_repeat_yourself), as everything you need is referenced in your master page (the dialog div, the javascript & css files, etc) and your individual pages don't need to include anything - just call away. You also don't have to remember to call special methods (or at least terribly special ones in `confirm`'s case). It just works.
 

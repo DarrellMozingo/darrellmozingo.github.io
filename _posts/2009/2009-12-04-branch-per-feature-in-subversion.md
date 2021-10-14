@@ -9,7 +9,7 @@ tags:
 
 ### Preamble
 
-![Branch-Per-Feature](images/branch-per-feature.jpg "Branch-Per-Feature")**Disclaimer:** My team and I have only been doing this for a short time, so please, for the love of all that is holy, don't take my word as gospel on any of this. We're learning more about this each day, but we're still far from proficient or experienced. I'm just putting what we do and what we've learned out there to possibly help others, as I know we would have loved to hear this when we started. If you blow up your repository and lose all your code, it's not my fault.
+![Branch-Per-Feature](/assets/2009/branch-per-feature.jpg "Branch-Per-Feature")**Disclaimer:** My team and I have only been doing this for a short time, so please, for the love of all that is holy, don't take my word as gospel on any of this. We're learning more about this each day, but we're still far from proficient or experienced. I'm just putting what we do and what we've learned out there to possibly help others, as I know we would have loved to hear this when we started. If you blow up your repository and lose all your code, it's not my fault.
 
 That said, lets discuss what Branch-Per-Feature is and how it _typically_ works. I won't get into much detail on why you should do it or what it is here, as [Derick Bailey](http://www.lostechies.com/blogs/derickbailey) has an excellent, though unfortunately unfinished at the moment, [series of posts](http://www.lostechies.com/blogs/derickbailey/archive/2009/07/15/branch-per-feature-source-control-introduction.aspx) on the subject and they're a **must** read to get a solid background on this. In a nut shell, though, Branch-Per-Feature is basically what the name implies - you create a branch in your source control system for each "feature" you work on (where the "feature" can be defined as big or as small as you want - we'll skip doing this for typos and the like). You can then work on that feature in isolation in your own branch, committing your changes as often as you like and not screwing up your other teammates or being affected by them, until you're all finished, at which point you merge the completed feature back into the trunk. Using this methodology, the trunk should always be kept in a "shippable" state.
 
@@ -23,27 +23,27 @@ I'll walk through the steps of a simplified "feature" branch from start to finis
 
 Now, say we have a repository named `BranchPerFeature` with the standard `/trunk`, `/branches`, and `/tags` folders. It has a simple console app that displays a welcome message. Call me weird, but I've never liked the SVN switch command, so I just setup a local directory structure similar to the repository's:
 
-![Local folder structure](images/sshot-1.png)
+![Local folder structure](/assets/2009/sshot-1.png)
 
 We'll start by creating a branch for our new feature. Right-click your checked out trunk folder, then select TortoiseSVN, then Branch/Tag. In the `To URL` field, we'll enter a path in the branches folder in the repository, usually named after the feature we're working on. In this case we'll create a branch in `branches/AddUserInput` (we're adding a Console.ReadLine() in this feature - exciting, huh?):
 
-![Creating feature branch](images/sshot-2.png)
+![Creating feature branch](/assets/2009/sshot-2.png)
 
 Now you can checkout that new branch in your local branches folder and start working on the feature, committing as often as you'd like knowing you're not affecting anyone else. When you're all done and everything is committed to it, we'll merge it back into the local copy of your trunk. Go to where you have the trunk checked out, right-click and select TortoiseSVN, then Merge. Of the three options you're presented with, select the second, `Reintegrate a branch`:
 
-![Integrating branch](images/sshot-3.png)
+![Integrating branch](/assets/2009/sshot-3.png)
 
 We're merging from our branch, so enter its repository URL in the `From URL` and hit next:
 
-![Integrate branch #2](images/sshot-4.png)
+![Integrate branch #2](/assets/2009/sshot-4.png)
 
 Hit Merge on the final screen (or use the Test Merge button to do a dry-run that won't affect anything). Remember, at this point all changes made from your branch, and applied to the trunk, are only local. Now open the updated trunk, run all your unit tests and whatnot, then commit these changes to the repository:
 
-![Commit merged branch](images/sshot-5.png)
+![Commit merged branch](/assets/2009/sshot-5.png)
 
 Congrats! Your first feature branch is finished and merged back into the trunk, hopefully with no problems. One major caveat of this procedure is **you must not use your branch again after it's merged back into the trunk**. Why? Well, Subversion keeps some properties set on all your files/folders so it knows what revisions have been merged back into them, and continuing to work on your now stale branch and trying to merge it back into the trunk again at a latter point would be bad ju-ju. To make sure nobody accidentally uses your branch, be sure to "delete" it from your repository (don't worry, the history is still available, just not readily available). To delete the branch, right-click on your checked out trunk folder, select TortoiseSVN, then Repo-browser. Navigate to your branches folder in the left pane, then right-click and delete your old branch:
 
-![Deleting old branch](images/sshot-6.png)
+![Deleting old branch](/assets/2009/sshot-6.png)
 
 ### A bit more complicated scenario
 
@@ -53,23 +53,23 @@ To show this, we'll create a new branch to add a prime number calculator to our 
 
 First, check-in any changes you've made on the branch (this allows you to roll back the coming updates if they blow up, among other things). Then right-click on your checked out branch folder and select TortoiseSVN, then Merge. Choose the first option this time, `Merge a range of revisions`:
 
-![Updating branch](images/sshot-9.png)
+![Updating branch](/assets/2009/sshot-9.png)
 
 Make sure the trunk is specified in the `URL to merge from` field on the next screen. Leave the `Revision range to merge` field blank, as Subversion tracks which revisions it already merged in automatically and won't try to re-merge them (which is new in version 1.6 - for older versions you'll have to track this and specify revision ranges by hand, and trust me, it gets messy real quick):
 
-![Updating branch #2](images/sshot-10.png)
+![Updating branch #2](/assets/2009/sshot-10.png)
 
 If you hit the Show Log button on this screen, it should show revisions that have already been merged in gray:
 
-![Showing merged revisions](images/sshot-13.png)
+![Showing merged revisions](/assets/2009/sshot-13.png)
 
 As a quick side note, when everything is done, you can do a diff on the files and see how Subversion tracks previously merged revisions on each file & folder:
 
-![Diff on updated file](images/sshot-12.png)
+![Diff on updated file](/assets/2009/sshot-12.png)
 
 After hitting next, you can hit either Merge or Test Merge (just like before), and make sure everything gets updated. Deal with any file or tree conflicts here, and run all your unit tests to make sure these new changes are still hunky-dory with your stuff. Then simply commit these new updates to your branch:
 
-![Committing updated branch](images/sshot-11.png)
+![Committing updated branch](/assets/2009/sshot-11.png)
 
 Keep up on these trunk updates while you're working on your feature, and when you're done and it's time to merge back into the trunk, you shouldn't have any (or at least not many!) issues or conflicts with it.
 
@@ -79,7 +79,7 @@ How can you know when changes are made to the trunk? Well, you can have everyone
 
 I set this up to monitor our trunk so I know when changes are made, with both a nice pop-up balloon and an email. Here's a view of this sample's trunk:
 
-![SVN-Monitor](images/sshot-8.png)
+![SVN-Monitor](/assets/2009/sshot-8.png)
 
 ### Complex scenarios
 

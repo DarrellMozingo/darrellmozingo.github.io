@@ -54,7 +54,7 @@ The last tag we need, again underneath the `publishers` section, is the `email` 
 
 ## Extra Files
 
-![CC.NET](images/cc.net.png "CC.NET Project Overview")There's also a `dashboard.cfg` file, which specifies how the web site displays build information for all the projects on the server (an example of which is shown on the right). I customized this one to include only needed report links and ignore others. This file, along with a few needed images, XSL formatting files, and instructions on where they should all be copied is included in the download at the end of post.
+![CC.NET](/assets/2008/cc.net.png "CC.NET Project Overview")There's also a `dashboard.cfg` file, which specifies how the web site displays build information for all the projects on the server (an example of which is shown on the right). I customized this one to include only needed report links and ignore others. This file, along with a few needed /assets/2008, XSL formatting files, and instructions on where they should all be copied is included in the download at the end of post.
 
 ## Conclusion
 

@@ -7,7 +7,7 @@ tags:
   - "events"
 ---
 
-![Coffee and Code](images/coffeeandcode.jpg "Coffee and Code")
+![Coffee and Code](/assets/2009/coffeeandcode.jpg "Coffee and Code")
 
 A week or two agoÂ [Jason Lautzenheiser](http://www.malachicomputer.com/blog/)Â emailed around about to a few of us about starting a local [Code and Coffee](http://www.codeandcoffee.info/) here in the Canton area, and I think it's a great idea. We haven't set a schedule or anything, but the first get together will be Friday, May 15th @ 7 AM at [Canton Arabica](http://cantonarabica.com/), right on DresslerÂ in Belden. Everyone's already busy in the evenings, so we figure we'll give this whole "first thing in the morning" time slot a shot.
 

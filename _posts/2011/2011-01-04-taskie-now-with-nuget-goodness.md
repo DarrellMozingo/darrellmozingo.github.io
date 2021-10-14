@@ -7,7 +7,7 @@ tags:
   - "taskie"
 ---
 
-![NuGet](images/nuget-229x64.png "NuGet")
+![NuGet](/assets/2011/nuget-229x64.png "NuGet")
 
 In addition to a few small bug fixes, Taskie is now filled with NuGet-y goodness (or should that be the other way around?). Anyway, you can grab the [package to use locally right here](https://github.com/downloads/DarrellMozingo/Taskie/taskie.0.999.nupkg) (with instructions on how to [host it locally](http://haacked.com/archive/2010/10/21/hosting-your-own-local-and-remote-nupack-feeds.aspx)). I'm working on getting it into the main NuGet package feed in the next week or two.
 

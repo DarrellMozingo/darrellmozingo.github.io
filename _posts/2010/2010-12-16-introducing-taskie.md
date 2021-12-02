@@ -35,7 +35,7 @@ public interface ITaskieServiceLocator
 5. Inside `Program.cs`, within your console application, initialize your dependency injection tool however you normally would and call `TaskieRunner.RunWith()`, passing the command line arguments and an instance of your implementation of `IServiceLocator`, like this:
 
 ```csharp
-public static void Main(string\[\] args)
+public static void Main(string[] args)
 {
     IoC.Bootstrap();
     TaskieRunner.RunWith(args, new ServiceLocator());

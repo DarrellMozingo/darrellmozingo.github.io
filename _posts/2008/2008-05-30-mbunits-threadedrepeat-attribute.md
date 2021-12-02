@@ -9,12 +9,14 @@ So I figured I'd go ahead and implement some quick caching around this by storin
 
 Unfortunately, it didn't take long for me to realize there were some serious threading issues going on. Whoops. So I started writing up a unit test to fail on the bug before I fixed it, and in the process of creating a bunch of worker threads to hit the method at the same time, I stumbled across a nifty feature in MbUnit: the `ThreadedRepeate` Attribute. Behold, a fake example:
 
-\[Test\]
-\[ThreadedRepeat(5)\]
-public void Should\_handle\_multithreaded\_access()
+```csharp
+[Test]
+[ThreadedRepeat(5)]
+public void Should_handle_multithreaded_access()
 {
-	Assert.IsNotEmpty(MyClass.GetExpensiveString());
+    Assert.IsNotEmpty(MyClass.GetExpensiveString());
 }
+```
 
 Just like the normal `[Repeat(5)]` attribute, which would simply call the test 5 consecutive times back to back, the `[ThreadedRepeat(5)]` attribute will call the test 5 times **in parallel**, firing off a separate thread for each one.
 

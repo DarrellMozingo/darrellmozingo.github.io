@@ -22,6 +22,7 @@ Here's a quick run-down of the steps we went through for our application, though
     
 6. (Optional) Add the following methods to your `Global.asax`, which will filter all exceptions thrown on the local host and ignore them (so developing on your local machine won't keep emailing everyone else, which, trust me, gets old pretty damn quick):
     
+```csharp
     public void errorLog\_Filtering(object sender, ExceptionFilterEventArgs e)
     {
         if(ErrorFiltering.Filter(new HttpContextWrapper(e.Context)))
@@ -37,9 +38,11 @@ Here's a quick run-down of the steps we went through for our application, though
             e.Dismiss();
         }
     }
+```
     
     and in another file somewhere (note the HttpContextWrapper in both of these pieces of code, for easier testing):
     
+```csharp
     public class ErrorFiltering
     {
         public static bool Filter(HttpContextWrapper httpContextWrapper)
@@ -47,6 +50,7 @@ Here's a quick run-down of the steps we went through for our application, though
             return httpContextWrapper.Request.IsLocal;
         }
     }
+```
     
 7. Run the SQL script included with the ELMAH download to generate the needed table and stored procedures, then hookup SQL security and the connection string from the previous steps
 

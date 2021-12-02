@@ -16,18 +16,20 @@ I'll walk you through doing this, assuming you don't already have an SSH key or 
     3. Enter a passphrase. I usually leave it blank as other guides suggest, trusting (perhaps mistakingly?) Window's folder security to keep it safe for me.
 5. Navigate to the folder where you just created your SSH key pairs, and create a file named `config`.
 6. Open the file in notepad and enter the following:
-    
-    Host github.com
-    	HostName github.com
-    	User git
-    	PreferredAuthentications publickey
-    	IdentityFile /Users/dmozingo/.ssh/id\_rsa\_github
-    
-    Host work
-    	HostName workGitServername
-    	User dmozingo
-    	IdentityFile /Users/dmozingo/.ssh/id\_rsa\_work
-    
+
+```
+Host github.com
+    HostName github.com
+    User git
+    PreferredAuthentications publickey
+    IdentityFile /Users/dmozingo/.ssh/id\_rsa\_github
+
+Host work
+    HostName workGitServername
+    User dmozingo
+    IdentityFile /Users/dmozingo/.ssh/id\_rsa\_work
+```
+
     You'll have to do a few substitutions in the file, mainly for the work `HostName` and both section's `IdentityFile`'s, if they're different for your setup. The first line of each section specified the name you'll use in "addressing" your Git commands later. By keeping the first one github.com, you won't have to change anything when you follow along with other guides online.
 7. Now give GitHub the contents of your public/GitHub SSH key file (the id\_rsa\_github.pub from my example). You can do this on your account settings page.
 8. Still at the Git Bash prompt, enter `ssh-agent.exe bash` to start the key manager. **You'll have to do this each time you use Git**, unless someone (please?) can tell me a better way.

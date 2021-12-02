@@ -1,23 +1,24 @@
----
-title: "Strongly Typed Views With Mvc Contrib - Part 1"
+--- title: "Strongly Typed Views With Mvc Contrib - Part 1"
 date: "2009-04-30"
 ---
 
 Out of the box, ASP.NET MVC uses weakly typed extension methods to generate various HTML elements (inputs, check boxes, select lists, etc). By weakly typed I mean they require strings, which are actually strings based on the properties of your view model. For instance, given this view model:
 
+```csharp
 public class OrderViewModel
 {
-	public int Quantity { get; set; }
-	public bool ApplyDiscount { get; set; }
+    public int Quantity { get; set; }
+    public bool ApplyDiscount { get; set; }
 }
+```
 
 You'd generate an input box for the quantity, using the standard HTML helper extensions, like so:
 
-<%= Html.TextBox("Quantity") %>
+`<%= Html.TextBox("Quantity") %>`
 
 Ew, strings. That's so .NET 1.1, right? With .NET 3 we get Expressions and lambdas. Now lambdas are just more concise ways to define delegates (methods you can pass around as variables), so they're nothing really new new. Expressions, for the purposes of this post, allow you to specify, in a compile safe manner, which property you want to use for something, which can then be parsed during run-time to get the property's string name (suffice to say Expressions can do much more and form the foundation for LINQ To SQL). For instance, what if, instead of using the above TextBox method for the quantity product, we could do this:
 
-<%= Html.TextBox(x => x.Quantity) %>
+`<%= Html.TextBox(x => x.Quantity) %>`
 
 Rest assured it'd produce the same HTML in the end while giving us the type safety we're looking for. What do I mean by type safety? I mean you can preform a rename refactoring on Quantity and you'd also rename the usage in the view (Resharper will actually do most rename refactorings on strings too, but it's not 100% reliable - it's a guess at best). That means less chance of something breaking (especially something you won't find out about until runtime when your customers are in there), which means high quality, which is just cool.
 

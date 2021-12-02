@@ -12,27 +12,29 @@ How about a better way? With some very slight Javascript-foo, you can override t
 
 First we'll override the default `alert` method on the `window` object, calling the dialog function from jQuery UI and setting some default parameters:
 
+```javascript
 window.alert = function (message) {
-	$("#dialog")
-	.html("")
-	.html('' + message)
-	.dialog({
-		autoOpen: true,
-		resizable: false,
-		height: 200,
-		width: 350,
-		title: "Alert!",
-		modal: true,
-		buttons: {
-			"OK": function () {
-				$(this).dialog("close");
-				return;
-			}
-		}
-	});
+    $("#dialog")
+    .html("")
+    .html('' + message)
+    .dialog({
+        autoOpen: true,
+        resizable: false,
+        height: 200,
+        width: 350,
+        title: "Alert!",
+        modal: true,
+        buttons: {
+            "OK": function () {
+                $(this).dialog("close");
+                return;
+            }
+        }
+    });
 };
 
 alert("Error!!!");
+```
 
 The HTML is cleared out and a default alert icon (from jQueryUI) is added via the class attribute `ui-icon-alert`. This allows us to create a standard `<div id="dialog"></div>` in our master page with nothing inside it, and reuse it for alert/confirm/prompt boxes. Then a standard alert call, like the one at the bottom, gives us:
 
@@ -40,30 +42,32 @@ The HTML is cleared out and a default alert icon (from jQueryUI) is added via th
 
 Similarly, we can override the default confirmation box. Here's a version that'll take the title, a message to show, and a callback function to execute if the user clicks "OK":
 
+```javascript
 window.confirm = function(title, confirmMessage, successCallback) {
-	$("#dialog")
-		.html("")
-		.html('' + confirmMessage)
-		.dialog({
-				autoOpen: true,
-				resizable: false,
-				height: 200,
-				width: 350,
-				title: title,
-				modal: true,
-				buttons: {
-					"Yes": function() {
-						$(this).dialog("close");
-						successCallback();
-						return;
-					},
-					"No": function() {
-						$(this).dialog("close");
-						return;
-					}
-				}
-			});
+    $("#dialog")
+        .html("")
+        .html('' + confirmMessage)
+        .dialog({
+                autoOpen: true,
+                resizable: false,
+                height: 200,
+                width: 350,
+                title: title,
+                modal: true,
+                buttons: {
+                    "Yes": function() {
+                        $(this).dialog("close");
+                        successCallback();
+                        return;
+                    },
+                    "No": function() {
+                        $(this).dialog("close");
+                        return;
+                    }
+                }
+            });
 };
+```
 
 confirm("Are you sure?", "Are you sure you want to create a confirm?", function() { alert("Sweet, all done!"); });
 

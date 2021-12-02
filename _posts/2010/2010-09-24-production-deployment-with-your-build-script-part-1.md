@@ -41,8 +41,8 @@ The two biggest benefits we get, virtually for free, with using TeamCity to run 
 
 - **Auditing** - you can see who's ran the script, and when
 - **Tracking** - it'll show you, for each run, which changes were included in that deployment down to a diff of each file and source control comments
-    - It'll also show which changes are pending for the next run: ![Pending Changes in TeamCity](/assets/2010/pendingchanges.png)
-    - We don't use a bug tracker that's supported by TeamCity, but theoretically it can link right to each bug fix that's included in each deployment
+  - It'll also show which changes are pending for the next run: ![Pending Changes in TeamCity](/assets/2010/pendingchanges.png)
+  - We don't use a bug tracker that's supported by TeamCity, but theoretically it can link right to each bug fix that's included in each deployment
 
 ## What's next?
 

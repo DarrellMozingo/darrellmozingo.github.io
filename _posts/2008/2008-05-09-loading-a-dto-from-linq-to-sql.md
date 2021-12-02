@@ -17,35 +17,39 @@ So why would you use these? A few reasons:
 
 Let's look at a simple scenario. We're loading a business object and calling out to our data layer for the information, which we'll get from SQL using LINQ to SQL. The following DTO will be passed back:
 
+```csharp
 public class PersonDTO
 {
-	public string FirstName { get; set; }
-	public string LastName { get; set; }
-	public int Age { get; set; }
-	public decimal HourlyWage { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public int Age { get; set; }
+    public decimal HourlyWage { get; set; }
 }
+```
 
 ## The code
 
 Let's look at the GetPerson method from the data layer, which uses LINQ to SQL to retrieve the needed information from SQL:
 
+```csharp
 public PersonDTO GetPerson(int personID)
 {
-	using(DatabaseDataContext db = new DatabaseDataContext())
-	{
-		return (from p in db.Peoples
-			    join pw in db.PeopleWages on p.PersonID equals pw.PersonID
-			    where p.PersonID == personID
-			    select new PersonDTO
-			    {
-					FirstName = p.FirstName,
-					LastName = p.LastName,
-					Age = p.Age,
-					HourlyWage = pw.HourlyWage
-			    }
-			   ).SingleOrDefault();
-	}
+    using(DatabaseDataContext db = new DatabaseDataContext())
+    {
+        return (from p in db.Peoples
+                join pw in db.PeopleWages on p.PersonID equals pw.PersonID
+                where p.PersonID == personID
+                select new PersonDTO
+                {
+                    FirstName = p.FirstName,
+                    LastName = p.LastName,
+                    Age = p.Age,
+                    HourlyWage = pw.HourlyWage
+                }
+               ).SingleOrDefault();
+    }
 }
+```
 
 The key bit is the `select new PersonDTO` and its four accompanying lines. It might look a bit odd, but it's the new [object initializer](http://weblogs.asp.net/scottgu/archive/2007/03/08/new-c-orcas-language-features-automatic-properties-object-initializers-and-collection-initializers.aspx) syntax added to C# 3.0. The compiler is basically creating a constructor in the background, taking in the specified parameters, and setting their respective property values.
 
@@ -59,18 +63,20 @@ As a side note, one of the neat features of Visual Studio 2008 is the IntelliSen
 
 To wrap up, here's the `CreatePerson` method, on the Person object in the business layer, that would consume the above `GetPerson` method:
 
+```csharp
 public Person CreatePerson(int personID)
 {
-	using(PersonDTO personDTO = DataLayer.GetPerson(personID))
-	{
-		return new Person
-		{
-			FirstName = personDTO.FirstName,
-			LastName = personDTO.LastName,
-			Age = personDTO.Age,
-			HourlyWage = personDTO.HourlyWage
-		};
-	}
+    using(PersonDTO personDTO = DataLayer.GetPerson(personID))
+    {
+        return new Person
+        {
+            FirstName = personDTO.FirstName,
+            LastName = personDTO.LastName,
+            Age = personDTO.Age,
+            HourlyWage = personDTO.HourlyWage
+        };
+    }
 }
+```
 
 Notice how it too is making use of the new object initializer feature.

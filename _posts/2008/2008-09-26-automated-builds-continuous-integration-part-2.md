@@ -21,11 +21,8 @@ A couple of quick pointers for working with NAnt:
 
 1. The word artifacts, as in most build systems, refers to anything produced by the build system itself, such as reports, executables, installation files, documentation, etc.
 2. Variable declaration & use:
-    
 3. Method declaration (normally called `targets`):
-    
 4. Outputting text to the screen:
-    
 
 You start a NAnt build script with
 

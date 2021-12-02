@@ -11,14 +11,16 @@ For example, the `GetHashCode()` hash of the string "password" from .NET 3.5 is 
 
 In light of that, we switched to using the `SHA512Managed` class to generate our hashes. Switching our code over wasn't an issue ([DRY](http://en.wikipedia.org/wiki/Don't_repeat_yourself) for the win!), but having to email our customers to enter new passwords and security questions, which we also hashed the same way, wasn't exactly fun. Not knowing their passwords apparently does have a downside! Here's how we're generating our hash codes now:
 
-private const string \_passwordSalt = "some\_long\_random\_string";
+```csharp
+private const string _passwordSalt = "some_long_random_string";
 
 public static string CalculateSaltedHash(string text)
 {
-	var inputBytes = Encoding.UTF8.GetBytes(text + \_passwordSalt);
-	var hash = new SHA512Managed().ComputeHash(inputBytes);
+    var inputBytes = Encoding.UTF8.GetBytes(text + _passwordSalt);
+    var hash = new SHA512Managed().ComputeHash(inputBytes);
 
-	return Convert.ToBase64String(hash);
+    return Convert.ToBase64String(hash);
 }
+```
 
 Yay? Nay?

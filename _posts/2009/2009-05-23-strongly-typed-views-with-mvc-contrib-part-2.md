@@ -7,63 +7,71 @@ In [part 1](http://darrell.mozingo.net/2009/04/30/strongly-typed-views-with-mvc-
 
 Lets start by taking this sexy looking view model that represents a single customer:
 
+```csharp
 public class CustomerViewModel
 {
-	public int Id { get; set; }
-	public string Name { get; set; }
-	public CustomerType Type { get; set; }
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public CustomerType Type { get; set; }
 }
+```
 
 Where `CustomerType` is a standard enumeration:
 
+```csharp
 public enum CustomerType
 {
-	Preferred,
-	Standard,
-	Delinquent
+    Preferred,
+    Standard,
+    Delinquent
 }
+```
 
 Then we'll provide an easy enough action for editing a customer:
 
+```csharp
 // In reality, we'd take in a customer Id and use that to load the customer from the database.
 public ActionResult Edit()
 {
-	var customerViewModelLoadedFromDatabase = new CustomerViewModel
-	                                          	{
-	                                          		Id = 10,
-	                                          		Name = "John",
-                                                    		Type = CustomerType.Standard
-	                                          	};
+    var customerViewModelLoadedFromDatabase = new CustomerViewModel
+                                                  {
+                                                      Id = 10,
+                                                      Name = "John",
+                                                            Type = CustomerType.Standard
+                                                  };
 
-	return View("Edit", customerViewModelLoadedFromDatabase);
+    return View("Edit", customerViewModelLoadedFromDatabase);
 }
+```
 
 Before looking at the view, though, we'll need to reference the `MvcContrib.FluentHtml.dll` assembly, and add the following to our `web.config`, under the configuration/system.web/pages/namespaces node:
 
 With all that out of the way, here's the relevant portion of the edit view:
 
+```
 <% using(Html.BeginForm(x => x.Update(null))) { %>
-	<%= this.Hidden(x => x.Id) %>
+    <%= this.Hidden(x => x.Id) %>
 
-	
+    
 
 <table>
-		<tbody><tr>
-			<td><b>&lt;%= this.Label(x =&gt; x.Name) %&gt;:
-			</b></td><td>&lt;%= this.TextBox(x =&gt; x.Name) %&gt;</td>
-		</tr>
-		<tr>
-			<td><b>&lt;%= this.Label(x =&gt; x.Type).Value("Customer Type") %&gt;:</b></td>
-			<td>&lt;%= this.Select(x =&gt; x.Type).Options<customertype>().Selected(Model.Type) %&gt;</customertype></td>
-		</tr>
-		<tr>
-			<td colspan="2" align="center">
-				&lt;%= this.SubmitButton("Update Customer") %&gt;
-			</td>
-		</tr>
-	</tbody></table>
+        <tbody><tr>
+            <td><b>&lt;%= this.Label(x =&gt; x.Name) %&gt;:
+            </b></td><td>&lt;%= this.TextBox(x =&gt; x.Name) %&gt;</td>
+        </tr>
+        <tr>
+            <td><b>&lt;%= this.Label(x =&gt; x.Type).Value("Customer Type") %&gt;:</b></td>
+            <td>&lt;%= this.Select(x =&gt; x.Type).Options<customertype>().Selected(Model.Type) %&gt;</customertype></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                &lt;%= this.SubmitButton("Update Customer") %&gt;
+            </td>
+        </tr>
+    </tbody></table>
 
 <% } %> 
+```
 
 First, note that **the page must inherit from `MvcContrib.FluentHtml.ModelViewPage`, not the standard Mvc `ViewPage` class**. The strongly typed Html.BeginForm is from the [Mvc Futures Assembly](http://www.asp.net/mvc/download/). Also, these extensions are on the ModelViewPage base class, not the normal Html helper type methods (i.e. they're `this.TextBox` instead of `Html.TextBox`).
 
@@ -73,75 +81,74 @@ Another quite useful extension is the `this.IdFor(x => x.Name)`, which for our s
 
 Alright, I'll admit for basic cases like this it's a bit harder to see the immediate benefits of strong typing, so let's complicate it a tad by introducing a sub view model for an address, and a collection of order view models by adding this in the Edit action to the customer object initialization:
 
+```csharp
 Address = new AddressViewModel
-          	{
-          		Street = "123 Easy St.",
-          		City = "Beverly Hills",
-          		State = "CA",
-          		Zip = "90210"
-          	},
+              {
+                  Street = "123 Easy St.",
+                  City = "Beverly Hills",
+                  State = "CA",
+                  Zip = "90210"
+              },
 Orders = new List {
-         		new OrderViewModel
-         			{
-					Id = 300,
-         				ApplyDiscount = true,
-         				Quantity = 10
-         			},
-         		new OrderViewModel
-         			{
-					Id = 301,
-         				ApplyDiscount = false,
-         				Quantity = 20
-         			}
-         	} 
+                 new OrderViewModel
+                     {
+                    Id = 300,
+                         ApplyDiscount = true,
+                         Quantity = 10
+                     },
+                 new OrderViewModel
+                     {
+                    Id = 301,
+                         ApplyDiscount = false,
+                         Quantity = 20
+                     }
+             } 
+```
 
 Here's one way to modify the edit page to deal with these new objects:
 
-	**Address:**
-	
-		
+```
+    **Address:**
+    
+        
 
 <table>
-			<tbody><tr>
-				<td>Street:</td>
-				<td>&lt;%= this.TextBox(x =&gt; x.Address.Street) %&gt;</td>
-			</tr>
-			<tr>
-				<td>City:</td>
-				<td>&lt;%= this.TextBox(x =&gt; x.Address.City) %&gt;</td>
-			</tr>
-			<tr>
-				<td>State:</td>
-				<td>&lt;%= this.TextBox(x =&gt; x.Address.State).Styles(width =&gt; "30px") %&gt;</td>
-			</tr>
-			<tr>
-				<td>Zip:</td>
-				<td>&lt;%= this.TextBox(x =&gt; x.Address.Zip) %&gt;</td>
-			</tr>
-		</tbody></table>
+            <tbody><tr>
+                <td>Street:</td>
+                <td>&lt;%= this.TextBox(x =&gt; x.Address.Street) %&gt;</td>
+            </tr>
+            <tr>
+                <td>City:</td>
+                <td>&lt;%= this.TextBox(x =&gt; x.Address.City) %&gt;</td>
+            </tr>
+            <tr>
+                <td>State:</td>
+                <td>&lt;%= this.TextBox(x =&gt; x.Address.State).Styles(width =&gt; "30px") %&gt;</td>
+            </tr>
+            <tr>
+                <td>Zip:</td>
+                <td>&lt;%= this.TextBox(x =&gt; x.Address.Zip) %&gt;</td>
+            </tr>
+        </tbody></table>
 
-	
-
-
-	**Orders:**
-	<% for(int i = 0; i < Model.Orders.Count; i++) { %>
-		
-			<%= this.Hidden(x => x.Orders\[i\].Id) %>
-			
+    **Orders:**
+    <% for(int i = 0; i < Model.Orders.Count; i++) { %>
+        
+            <%= this.Hidden(x => x.Orders\[i\].Id) %>
+            
 
 <table>
-				<tbody><tr>
-					<td>Quantity:</td>
-					<td>&lt;%= this.TextBox(x =&gt; x.Orders[i].Quantity) %&gt;</td>
-				</tr>
-				<tr>
-					<td>&lt;%= this.Label(x =&gt; x.Orders[i].ApplyDiscount).Value("Apply Discount") %&gt;:</td>
-					<td>&lt;%= this.CheckBox(x =&gt; x.Orders[i].ApplyDiscount)%&gt;</td>
-				</tr>
-			</tbody></table>
-
-		
-	<% } %>
+                <tbody><tr>
+                    <td>Quantity:</td>
+                    <td>&lt;%= this.TextBox(x =&gt; x.Orders[i].Quantity) %&gt;</td>
+                </tr>
+                <tr>
+                    <td>&lt;%= this.Label(x =&gt; x.Orders[i].ApplyDiscount).Value("Apply Discount") %&gt;:</td>
+                    <td>&lt;%= this.CheckBox(x =&gt; x.Orders[i].ApplyDiscount)%&gt;</td>
+                </tr>
+            </tbody></table>
+    <% } %>
+```
 
 You'll notice this is all still in a strongly typed manor, even with the sub object and object collection. These are basically the same extensions as before, except for `CheckBox`, which works as you'd expect. Note the Styles method on most of these extensions, which takes a param of Func's that allows you to define CSS styles. The state text box, for examples, is defining the width CSS style and setting it to 30px.
 

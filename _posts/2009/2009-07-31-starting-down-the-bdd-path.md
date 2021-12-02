@@ -15,76 +15,82 @@ There's plenty of existing BDD frameworks for .NET, including [Machine.Specifica
 
 In light of that, I created a super simple specification base class:
 
+```csharp
 public class SpecBase
 {
-	\[TestFixtureSetUp\]
-	public void Once\_before\_any\_specification\_is\_ran()
-	{
-		infastructure\_setup();
-		context();
-		because();
-	}
+    [TestFixtureSetUp]
+    public void Once_before_any_specification_is_ran()
+    {
+        infastructure_setup();
+        context();
+        because();
+    }
 
-	protected virtual void infastructure\_setup()
-	{
-	}
+    protected virtual void infastructure_setup()
+    {
+    }
 
-	protected virtual void context()
-	{
-	}
+    protected virtual void context()
+    {
+    }
 
-	protected virtual void because()
-	{
-	}
+    protected virtual void because()
+    {
+    }
 }
+```
 
 I wasn't kidding - there's not much to it at all. The `infastructure_setup` method allows me to create base classes for testing services/controllers/mapper, where I can setup our AutoMocking container and create the system under test as neeeded. For example, here's the base spec class we use for testing our services:
 
+```csharp
 public class ServiceSpecBase : SpecBase
-	where SERVICE : class, INTERFACE
+    where SERVICE : class, INTERFACE
 {
-	protected RhinoAutoMocker \_serviceMocks;
-	protected INTERFACE \_service;
+    protected RhinoAutoMocker _serviceMocks;
+    protected INTERFACE _service;
 
-	protected override void infastructure\_setup()
-	{
-		\_serviceMocks = new RhinoAutoMocker();
-		\_service = \_serviceMocks.ClassUnderTest;
-	}
+    protected override void infastructure_setup()
+    {
+        _serviceMocks = new RhinoAutoMocker();
+        _service = _serviceMocks.ClassUnderTest;
+    }
 } 
+```
 
 The auto mocker (from StructureMap, in this case), just makes an empty dynamic mock for each argument of a given constructor. Our services generally take in a good half dozen objects, so this saves us from having to create them by hand (via something like `var mockRepository = MockRepository.GenerateMock()`). The system under test is then created after the automocker is initialized (I don't generally like the generic "sut" variable name if I can avoid it - you'll see I'm using `_service` for this class as the service is _always_ the system under test for anything using this base class).
 
 Here's an example specification using this new `SpecBase` class:
 
-\[TestFixture\]
-public class When\_hiring\_an\_unemployed\_person : SpecBase
+```csharp
+[TestFixture]
+public class When_hiring_an_unemployed_person : SpecBase
 {
-	private readonly Company \_company = new Company();
-	private readonly Person \_person = new Person();
+    private readonly Company _company = new Company();
+    private readonly Person _person = new Person();
 
-	protected override void context()
-	{
-		\_person.IsEmployed = false;
-	}
+    protected override void context()
+    {
+        _person.IsEmployed = false;
+    }
 
-	protected override void because()
-	{
-		\_company.Hire(\_person);
-	}
+    protected override void because()
+    {
+        _company.Hire(_person);
+    }
 
-	\[Test\]
-	public void Should\_increase\_the\_number\_of\_employees\_in\_the\_company\_by\_one()
-	{
-		\_company.Employees.Count().ShouldEqual(1);
-	}
+    [Test]
+    public void Should_increase_the_number_of_employees_in_the_company_by_one()
+    {
+        _company.Employees.Count().ShouldEqual(1);
+    }
 
-	\[Test\]
-	public void Should\_mark\_the\_person\_as\_employed()
-	{
-		\_person.IsEmployed.ShouldBeTrue();
-	}
+    [Test]
+    public void Should_mark_the_person_as_employed()
+    {
+        _person.IsEmployed.ShouldBeTrue();
+    }
 }
+```
 
 This example doesn't really show how well BDD has started helping reduce the complexity of some of our tests by explicitly naming the context they're running in and making them easier to read. As with every other example on the Internet, this one isn't quite complex enough to really show the benefits, but I hope you at least catch a glimpse of them. I also realize this might not be "correct" BDD styling, and that I should be leveraging share contexts with a base class more (for that mater, I should be using an actual framework for this), but it's serving the purpose well, and it's a simple first step to introducing it to the code base and my team. It'll evolve - always does.
 

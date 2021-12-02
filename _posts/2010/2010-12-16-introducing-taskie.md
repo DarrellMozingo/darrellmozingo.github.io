@@ -23,28 +23,33 @@ So I whipped up Taskie. It handles all the boiler plate crud and eases deploymen
 2. Add a console application to your solution
 3. Add a reference to `Taskie.dll` in the console application project, and set it to build against the full .NET 4.0 Framework (not the default Client Profile)
 4. Implement `Taskie.ITaskieServiceLocator` in your application, using your dependency injection tool of choice. These methods should be single line implementations.
-    
-    public interface ITaskieServiceLocator
-    {
-    	INSTANCE GetInstance();
-    	IEnumerable GetAllInstances();
-    } 
-    
+
+```csharp
+public interface ITaskieServiceLocator
+{
+    INSTANCE GetInstance();
+    IEnumerable GetAllInstances();
+} 
+```
+
 5. Inside `Program.cs`, within your console application, initialize your dependency injection tool however you normally would and call `TaskieRunner.RunWith()`, passing the command line arguments and an instance of your implementation of `IServiceLocator`, like this:
-    
-    public static void Main(string\[\] args)
-    {
-    	IoC.Bootstrap();
-    	TaskieRunner.RunWith(args, new ServiceLocator());
-    }
-    
+
+```csharp
+public static void Main(string\[\] args)
+{
+    IoC.Bootstrap();
+    TaskieRunner.RunWith(args, new ServiceLocator());
+}
+```
+
 6. Add a class that implements `Taskie.ITask` somewhere in your main project, name it "**Foo**Task" (where Foo is whatever you want, but it must end with Task), and make sure your dependency injection tool knows about it (either through auto discovery or explicity registered):
-    
-    public interface ITask
-    {
-    	void Run();
-    }
-    
+
+```csharp
+public interface ITask
+{
+    void Run();
+}
+```
 
 That's it! Taskie is all setup and ready to roll. Running your console application with no command line arguments will show a usage screen listing any tasks that ready to run. Run the executable with "/run **Foo**" and it'll run whatever you have in the `Run` method on your `FooTask` class.
 
@@ -54,13 +59,14 @@ A few optional things you can do:
 
 1. Tag your task class with the `TaskDescription` attribute, providing it a string description to display on the usage screen (as seen above)
 2. Implement `Taskie.ITaskieApplication` to run any code before and after Taskie does its thing (such as setting up your NHibernate session)
-    
-    public interface ITaskieApplication
-    {
-    	void Startup();
-    	void Shutdown();
-    }
-    
+
+```csharp
+public interface ITaskieApplication
+{
+    void Startup();
+    void Shutdown();
+}
+```
 
 ## Future Plans
 

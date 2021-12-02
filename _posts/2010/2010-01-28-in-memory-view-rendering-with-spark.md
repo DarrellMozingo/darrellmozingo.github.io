@@ -9,35 +9,37 @@ Turns out (surprise surprise!) that getting your rendered HTML from the Web Form
 
 How? Glad you asked:
 
-public static string RenderViewToHtml(string viewPathAndName, VIEW\_MODEL viewModel) where VIEW\_MODEL : class
+```csharp
+public static string RenderViewToHtml(string viewPathAndName, VIEW_MODEL viewModel) where VIEW_MODEL : class
 {
-	var templatesLocation = new FileSystemViewFolder(HttpContext.Current.Server.MapPath("~/Views"));
-	var viewEngine = new SparkViewEngine(BuildSparkSettings()) { ViewFolder = templatesLocation };
-	var descriptor = new SparkViewDescriptor().AddTemplate(viewPathAndName);
+    var templatesLocation = new FileSystemViewFolder(HttpContext.Current.Server.MapPath("~/Views"));
+    var viewEngine = new SparkViewEngine(BuildSparkSettings()) { ViewFolder = templatesLocation };
+    var descriptor = new SparkViewDescriptor().AddTemplate(viewPathAndName);
 
-	var view = (SparkView)viewEngine.CreateInstance(descriptor);
-	view.ViewData = new ViewDataDictionary(viewModel);
+    var view = (SparkView)viewEngine.CreateInstance(descriptor);
+    view.ViewData = new ViewDataDictionary(viewModel);
 
-	string html;
+    string html;
 
-	using (var writer = new StringWriter())
-	{
-		view.RenderView(writer);
-		html = writer.ToString();
-	}
+    using (var writer = new StringWriter())
+    {
+        view.RenderView(writer);
+        html = writer.ToString();
+    }
 
-	return html;
+    return html;
 }
 
 public static SparkSettings BuildSparkSettings()
 {
-	return new SparkSettings()
-		.AddNamespace("System.Linq")
-		.AddNamespace("System.Web.Mvc")
-		.AddNamespace("Microsoft.Web.Mvc")
-		.SetPageBaseType(typeof(SparkView))
-		.SetDebug(false);
+    return new SparkSettings()
+        .AddNamespace("System.Linq")
+        .AddNamespace("System.Web.Mvc")
+        .AddNamespace("Microsoft.Web.Mvc")
+        .SetPageBaseType(typeof(SparkView))
+        .SetDebug(false);
 } 
+```
 
 Simply pass in a path to your view (minus the `/View` part) along with a view model and you'll get back a string full of rendered HTML goodness. The `BuildSparkSettings()` method can shared with the application startup code where you create and add Spark as an ASP.NET MVC view engine. Here's a sample call:
 

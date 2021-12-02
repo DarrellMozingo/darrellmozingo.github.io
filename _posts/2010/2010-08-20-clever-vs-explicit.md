@@ -11,27 +11,31 @@ The simple fact of the matter is you spend more time maintaining code than you d
 
 There's the obvious places where people get clever, like algorithms or loops, but there's plenty of other places too. Places where I wouldn't really call it "being clever", or at least I'm sure the original authors never thought they were trying to be clever when they wrote it. It was probably just quicker to write it in a certain way. For example, take this code:
 
+```csharp
 var mappedEmployees = new List();
 
-foreach (var employee in \_employeeRepository.All().Where(x => x.IsRetired == false && x.Salary > 100000))
+foreach (var employee in _employeeRepository.All().Where(x => x.IsRetired == false && x.Salary > 100000))
 {
-	mappedEmployees.Add(\_employeeMapper.Map(employee));
+    mappedEmployees.Add(_employeeMapper.Map(employee));
 }
 
 return View(mappedEmployees); 
+```
 
 It's not really hard to read, but it's not really easy either. It might take you an extra second or two to figure out what's going on when you first look at (even if you wrote it a few months ago), but multiply that by how many places you see code like this and how often you go back in to modify it (for new features, bugs, whatever). It adds up, quick. Written more explicitly, it might look something like this:
 
+```csharp
 var mappedEmployees = new List();
-var nonRetiredHighEarningEmployees = \_employeeRepository.All().Where(x => x.IsRetired == false && x.Salary > 100000);
+var nonRetiredHighEarningEmployees = _employeeRepository.All().Where(x => x.IsRetired == false && x.Salary > 100000);
 
 foreach (var nonRetiredHighEarningEmployee in nonRetiredHighEarningEmployees)
 {
-	var mappedEmployee = \_employeeMapper.Map(nonRetiredHighEarningEmployee);
-	mappedEmployees.Add(mappedEmployee);
+    var mappedEmployee = _employeeMapper.Map(nonRetiredHighEarningEmployee);
+    mappedEmployees.Add(mappedEmployee);
 }
 
 return View(mappedEmployees); 
+```
 
 You might call it verbose, but I'd say it's a net gain. Each line is doing one thing. Yon can step through and read it without mentally pulling pieces apart. None of this "OK, that's the mapped object call there, and its return is going into the collection there, and the whole thing is looping through that query there". Things are given names and methods aren't nested inside each other.
 

@@ -15,21 +15,23 @@ My first stab at it, and it actually ran for a while like this, took in Structur
 
 Worked fine and dandy, but testing it was slow. I had to scan all the types in the assembly, even if I knew I was looking for a single test dummy class. I didn't like it, so I began tinkering with Structure Map. I wanted the fully initialized objects (from the container) injected in as an `IEnumerable<ITask>`, so I could just pluck the needed one to run, and loop through that list to build up the small display when needed. It would be easier to read and also make testing quicker and simpler. Here's what I ended up with:
 
+```csharp
 public static void BootstrapStructureMap()
 {
-	ObjectFactory.Initialize(y =>
-	                         {
-	                         	y.Scan(x =>
-	                         	       {
-	                         	       	x.TheCallingAssembly();
-						x.WithDefaultConventions();
-						x.AddAllTypesOf();
-	                         	       });
-	                         	
-					y.ForRequestedType\>()
-	                         		.TheDefault.Is.ConstructedBy(x => ObjectFactory.GetAllInstances());
-	                         });
+    ObjectFactory.Initialize(y =>
+                             {
+                                 y.Scan(x =>
+                                        {
+                                            x.TheCallingAssembly();
+                        x.WithDefaultConventions();
+                        x.AddAllTypesOf();
+                                        });
+                                 
+                    y.ForRequestedType<>()
+                                     .TheDefault.Is.ConstructedBy(x => ObjectFactory.GetAllInstances());
+                             });
 } 
+```
 
 This is called while our app is boot strapping (though we use separate Registries for each area of the app, I just simplified it for posting). Pretty self explanatory - the `AddAllTypesOf` tells Structure Map to gather up all implementors of `ITask` in the assembly, and we then tell Structure Map to get all instances of that interface to pass it in whenever `IEnumerable<ITask>` is requested. Without that, you'd have to take in an array of `ITask's`. Same difference, I just prefer enumerables.
 

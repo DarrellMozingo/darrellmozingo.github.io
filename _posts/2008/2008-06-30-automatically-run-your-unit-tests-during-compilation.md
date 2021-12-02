@@ -9,9 +9,11 @@ After setting up a build script for the project and adding it to our continuous 
 
 A few days later I ran into this helpful piece of information, I think perhaps from JP Boodhoo, though I'm not positive. Anyway, if you have a separate assembly for your unit tests, simply go to the property page of that project, click the "Build Events" tab along the left, and enter this in for the post-build event:
 
+```
 "$(ProjectDir)..\\UtilityLibrary.Core\\Internal\\Tools\\MbUnit\\MbUnit.Cons.exe" "$(TargetPath)"
+```
 
-This statement assumes you have your project checked out to something like C:\\MyProjects\\UtilityLibrary, and under there you have UtilityLibrary.Core for your actual code, and UtilityLibrary.UnitTests for, well, your unit tests. This command starts in the UnitTests forlder, goes up a directory (into C:\\MyProjects\\UtilityLibrary) and right back into the Core folder, which has the MbUnit library/program in it. If your situation is at all different, you'll have to adjust this command accordingly, but it's a good start.
+This statement assumes you have your project checked out to something like C:\MyProjects\UtilityLibrary, and under there you have UtilityLibrary.Core for your actual code, and UtilityLibrary.UnitTests for, well, your unit tests. This command starts in the UnitTests forlder, goes up a directory (into C:\MyProjects\UtilityLibrary) and right back into the Core folder, which has the MbUnit library/program in it. If your situation is at all different, you'll have to adjust this command accordingly, but it's a good start.
 
 Now your unit tests will be ran as a step in compiling your solution, and the compilation will fail if any of the unit tests fail:
 

@@ -13,15 +13,17 @@ I think I can safely say I finally "get" dependency injection (DI) and the need 
 
 Many objects have an outside dependency of some sort. Instead of creating the dependency inside your class (by doing something like `myDependency = new Dependency()`), you want these dependencies to be "injected" in, usually by the constructor:
 
+```csharp
 public class OrderProcessingService
 {
-	private readonly IRepository \_repository;
+    private readonly IRepository _repository;
 
-	public OrderProcessingService(IRepository repository)
-	{
-		\_repository = repository;
-	}
+    public OrderProcessingService(IRepository repository)
+    {
+        _repository = repository;
+    }
 }
+```
 
 That's it. Seriously. It's not hard to grasp, and you're probably already doing it, but the trick for me was figuring out how to actually go about using this in any sort of sane and recommended way, as you'll notice the requirement is now on the caller to provide an instance of `IRepository`. If you want more details on this pattern, [there's plenty out there](http://www.google.com/search?q=dependency+injection).
 
@@ -38,38 +40,39 @@ If you're looking for more detailed reasons, you'll again want to refer to the [
 Ah, now for the juicy part I know you're all dying to hear: how the hell to actually use the pattern in conjunction with one of the tools I mentioned at the beginning of the post. Before giving away the answer, let's quickly go over the three primary ways to use a DI container in your app:
 
 1. **Service locator:** this pattern is generally considered a no-no, as it still burys your dependencies deep inside your code. Sure, you can swap them out when needed for unit testing, but they're still very opaque and will almost certainly get very hard to work with, very fast:  
-      
+
+```csharp
+public void ProcessOrder()
+{
+    var repository = IoC.Resolve();
     
-    public void ProcessOrder()
-    {
-    	var repository = IoC.Resolve();
-    	
-    	// Do stuff with repository.
-    } 
-    
-    In the above example, `IoC.Resolve` is a simple static method that delegates to whatever DI framework you're using. Callers won't know about this dependency, though, and without fully boot strapping your framework in your unit test (icky) or injecting a fake into your container, the call will either throw or return null, neither of which you want to be checking for everywhere.  
-      
-    
+    // Do stuff with repository.
+} 
+```
+
+In the above example, `IoC.Resolve` is a simple static method that delegates to whatever DI framework you're using. Callers won't know about this dependency, though, and without fully boot strapping your framework in your unit test (icky) or injecting a fake into your container, the call will either throw or return null, neither of which you want to be checking for everywhere.  
+
 2. **Poor-man's dependency injection:** This is a slight twist on normal constructor DI. You have one empty constructor for most of the program to use, which delegates to a "loaded" constructor that unit tests use. While making the dependencies clear, this removes lifetime management from the container's hands, and also gets ugly when you start changing dependencies around. This is usually used in conjunction with the service locator pattern above:  
-      
+
+```csharp
+public class OrderProcessingService
+{
+    private readonly IRepository _repository;
     
-    public class OrderProcessingService
+    public OrderProcessingService() : this(IoC.Resolve())
     {
-    	private readonly IRepository \_repository;
-    	
-    	public OrderProcessingService() : this(IoC.Resolve())
-    	{
-    	}
-    
-    	public OrderProcessingService(IRepository repository)
-    	{
-    		\_repository = repository;
-    	}
-    } 
-    
+    }
+
+    public OrderProcessingService(IRepository repository)
+    {
+        _repository = repository;
+    }
+} 
+```
+
 3. **True dependency injection:** Classes generally have only one constructor which takes in all the required dependencies (see the first code snippet at the top of the post).
 
-#3, true dependency injection, is the one I had no idea how to go about setting up in my app. Everyone said not to use the service locator pattern or poor-man's dependency injection, but how was I supposed to _not_ use them and still get everything injected in? It seems like I was never supposed to call my DI container's `Resolve` method. So what gives? Every time someone got close to answering it, it seemed like they'd blow off the question. Ugh.
+Number 3, true dependency injection, is the one I had no idea how to go about setting up in my app. Everyone said not to use the service locator pattern or poor-man's dependency injection, but how was I supposed to _not_ use them and still get everything injected in? It seems like I was never supposed to call my DI container's `Resolve` method. So what gives? Every time someone got close to answering it, it seemed like they'd blow off the question. Ugh.
 
 After enough playing around, reading, and looking at other open source projects, though, it finally clicked: **only call Resolve at the furthest edges of your application, and as few times as possible**. So what does that mean and where should you be calling it in your app? Well... it depends.
 

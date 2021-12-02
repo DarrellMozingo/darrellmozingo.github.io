@@ -1,17 +1,24 @@
 title: Darrell Mozingo's Blog
 email: darrell@mozingo.net
-description: >- # this means to ignore newlines until "baseurl:"
-  Discussions on development principles and practices
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: ""
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: DarrellMozingo
 github_username:  DarrellMozingo
 
 theme: minima
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+  extensions: fenced_code_blocks
+
 plugins:
   - jekyll-feed
 
 exclude:
+   - .gitignore
    - .rbenv
    - Gemfile
    - Gemfile.lock

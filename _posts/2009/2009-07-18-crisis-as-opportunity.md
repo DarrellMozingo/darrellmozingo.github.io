@@ -1,10 +1,6 @@
 ---
 title: "Crisis as Opportunity"
 date: "2009-07-18"
-categories: 
-  - "musings"
-tags: 
-  - "musings"
 ---
 
 I'm currently reading through Eric Evan's [Domain Driven Design](http://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215). It's quite a good read - a bit thick at times, but still very much grounded in pragmatism and real life. One smaller section really stood out at me recently, titled "Crisis as Opportunity", and begins on page 325. Here's a few of the more meaningful portions from that section:

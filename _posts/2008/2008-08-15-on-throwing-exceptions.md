@@ -1,10 +1,6 @@
 ---
 title: "On Throwing Exceptions"
 date: "2008-08-15"
-categories: 
-  - "quickie"
-tags: 
-  - "quickie"
 ---
 
 Don't catch exceptions unless you're prepared to do something meaningful about it, or add more useful information to the exception message/object. There's nothing more annoying than seeing:

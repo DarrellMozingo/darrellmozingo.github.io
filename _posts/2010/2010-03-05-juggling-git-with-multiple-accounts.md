@@ -1,10 +1,6 @@
 ---
 title: "Juggling Git with multiple accounts"
 date: "2010-03-05"
-categories: 
-  - "source-control"
-tags: 
-  - "source-control"
 ---
 
 We're finally getting a Git server setup at work. Since I also happen to do a bit of open source contributing at work (usually via submitting patches for issues that effect us) and virtually every open source project and its brother is moving to [Github](https://github.com/) lately, I could already see juggling these two systems would be an issue. I can't use the same SSH key for both our internal Git server and Github for various reasons, and I wouldn't I want to, really. Fortunately, it turns out managing multiple accounts with Git, and SSH in general, isn't too bad.

@@ -1,10 +1,6 @@
 ---
 title: "In-memory view rendering with Spark"
 date: "2010-01-28"
-categories: 
-  - "aspnet-mvc"
-tags: 
-  - "aspnet-mvc"
 ---
 
 We recently had a requirement to start printing some documents from our web application. These documents required some very precise positioning of a few elements that can't be achieved with standard web browser printing capabilities. After weighing our options, we decided to go the generated PDF route. There's quite a few HTML -> PDF generation options out there, but they almost all require you to either point them at an HTML document on disk or feed them a string of your HTML. Options, options, options. Yea, I think we'll take the string route, thanks.

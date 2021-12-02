@@ -1,10 +1,6 @@
 ---
 title: "Automated Builds & Continuous Integration - Part 2"
 date: "2008-09-26"
-categories: 
-  - "build-management"
-tags: 
-  - "build-management"
 ---
 
 In [Part 1](http://darrell.mozingo.net/2008/08/28/automated-builds-continuous-integration-part-1/) I talked, quite generally, about what automated builds and continuous integration servers are. In this part I'll walk you through setting up a simple automated build script for your company's extension library.

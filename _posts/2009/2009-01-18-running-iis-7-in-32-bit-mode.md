@@ -1,10 +1,6 @@
 ---
 title: "Running IIS 7 In 32-bit Mode"
 date: "2009-01-18"
-categories: 
-  - "quickie"
-tags: 
-  - "quickie"
 ---
 
 I recently got a new machine at work with a 64-bit quad-core CPU, dual 15k RPM SCSI drives, 4G RAM, and, \*gulp\*, Vista. I've never used Vista before, and after all the horror stories I've heard, I was pretty hesitant. We're using ASP.NET MVC with our new project, though, and deploying out to Windows Server 2008, which runs IIS7, so I figured developing with the same thing on my local box was a good idea. That means running the apps through IIS and not the built in Visual Studio 2008 Cassini server, which is what I was using back on XP.

@@ -1,10 +1,6 @@
 ---
 title: "Taskie - now with NuGet goodness"
 date: "2011-01-04"
-categories: 
-  - "taskie"
-tags: 
-  - "taskie"
 ---
 
 ![NuGet](/assets/2011/nuget-229x64.png "NuGet")

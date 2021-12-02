@@ -1,10 +1,6 @@
 ---
 title: "Automated Builds & Continuous Integration - Part 3"
 date: "2008-12-31"
-categories: 
-  - "build-management"
-tags: 
-  - "build-management"
 ---
 
 In [Part 2](http://darrell.mozingo.net/2008/09/26/automated-builds-continuous-integration-part-2/), I walked you through setting up a build script for your solution. Now we'll go through setting up a continuous integration server using Cruise Control.NET.

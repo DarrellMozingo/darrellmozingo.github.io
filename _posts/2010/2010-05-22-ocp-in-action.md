@@ -1,10 +1,6 @@
 ---
 title: "OCP in action"
 date: "2010-05-22"
-categories: 
-  - "design-principles"
-tags: 
-  - "design-principles"
 ---
 
 ### What is OCP?

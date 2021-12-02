@@ -1,10 +1,6 @@
 ---
 title: "Nothin' But .NET Training"
 date: "2008-12-03"
-categories: 
-  - "reviews"
-tags: 
-  - "reviews"
 ---
 
 When you think about corporate training courses, you pretty much picture a few 8-5 classes with a nice lunch break, generally easy workloads, and a somewhat low learning curve, right? At least that's what I always knew them to be until last week. After taking [J.P. Boodhoo's](http://blog.jpboodhoo.com/) [Nothin' But .NET boot camp](http://jpboodhoo.com/training.oo) the week of November 17th in Philadelphia PA, though, that rosy picture of easy days with only a relatively low amount of learning has been replaced with one of _intense_ training and pushing the boundaries of what I thought I was capable of.

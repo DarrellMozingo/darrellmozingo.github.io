@@ -1,10 +1,6 @@
 ---
 title: "Automated Builds & Continuous Integration - Part 1"
 date: "2008-08-28"
-categories: 
-  - "build-management"
-tags: 
-  - "build-management"
 ---
 
 Ah yes, automated build scripts and continuous integration servers. They form the foundation of any software project, or rather they should, but how would one go about setting them up? Before we get to that, let's differentiate a little first.

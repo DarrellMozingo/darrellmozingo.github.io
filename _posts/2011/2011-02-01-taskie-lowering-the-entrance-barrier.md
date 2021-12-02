@@ -1,10 +1,6 @@
 ---
 title: "Taskie - Lowering the entrance barrier"
 date: "2011-02-01"
-categories: 
-  - "taskie"
-tags: 
-  - "taskie"
 ---
 
 One more step to lowering the entrance barrier for Taskie is complete:

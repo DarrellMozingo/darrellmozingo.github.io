@@ -1,10 +1,6 @@
 ---
 title: "2009 Goals - October Update"
 date: "2009-11-02"
-categories: 
-  - "goals"
-tags: 
-  - "goals"
 ---
 
 How am I doing on my [goals for the year](http://darrell.mozingo.net/2009/01/02/new-year-new-goals-2009/)? Let's see (comments in italics after each goal):

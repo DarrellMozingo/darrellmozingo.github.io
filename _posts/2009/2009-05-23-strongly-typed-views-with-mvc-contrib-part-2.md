@@ -1,10 +1,6 @@
 ---
 title: "Strongly Typed Views With Mvc Contrib - Part 2"
 date: "2009-05-23"
-categories: 
-  - "aspnet-mvc"
-tags: 
-  - "aspnet-mvc"
 ---
 
 In [part 1](http://darrell.mozingo.net/2009/04/30/strongly-typed-views-with-mvc-contrib-part-1/), I explained the reasoning behind using strongly typed HTML helpers in your view (with ease of refactoring being chief among them). Now that you have an ASP.NET MVC project referencing the needed Mvc Contrib assemblies, how can you actually get started using them?

@@ -1,10 +1,6 @@
 ---
 title: "C# 3.0 Automatic Property Gotcha"
 date: "2008-05-27"
-categories: 
-  - "quickie"
-tags: 
-  - "quickie"
 ---
 
 One of the neat new features of C# 3.0 is the [automatic properties](http://weblogs.asp.net/scottgu/archive/2007/03/08/new-c-orcas-language-features-automatic-properties-object-initializers-and-collection-initializers.aspx) syntax. It's basically a quicker and simpler way to declare properties, as you don't need to create a private backing object for each one as you've always had to. Here's an example:

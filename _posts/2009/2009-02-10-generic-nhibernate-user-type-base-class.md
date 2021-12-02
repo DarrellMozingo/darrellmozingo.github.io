@@ -1,10 +1,6 @@
 ---
 title: "Generic NHibernate User Type Base Class"
 date: "2009-02-10"
-categories: 
-  - "nhibernate"
-tags: 
-  - "nhibernate"
 ---
 
 NHibernate allows you to create custom types for situations where you need more than what's provided by default (int, string, decimal, etc). For example, we have a custom Money, Percent, and Hour value types in our domain which are, for the most part, immutable generic wrappers around a decimal. We wanted to store these types as decimals in the database, but using the provided decimal type just wouldn't work.

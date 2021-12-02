@@ -1,12 +1,6 @@
 ---
 title: "Loading a DTO from LINQ To SQL"
 date: "2008-05-09"
-categories: 
-  - "design-patterns"
-  - "linq"
-tags: 
-  - "design-patterns"
-  - "linq"
 ---
 
 ## The background

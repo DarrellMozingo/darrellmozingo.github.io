@@ -1,10 +1,6 @@
 ---
 title: "Strongly typed client-side URLs in ASP.NET MVC"
 date: "2011-03-03"
-categories: 
-  - "aspnet-mvc"
-tags: 
-  - "aspnet-mvc"
 ---
 
 ## The problem

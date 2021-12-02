@@ -1,10 +1,6 @@
 ---
 title: "Code and Coffee - Inital Impressions"
 date: "2009-05-24"
-categories: 
-  - "events"
-tags: 
-  - "events"
 ---
 
 We've had two meet-ups for the [Code and Coffee](http://darrell.mozingo.net/2009/05/08/code-and-coffee/) already now, and it seems to be going pretty good. We decided to tackle a simple Rails application, as none of us had used Ruby or Rails before much, and thought it'd be worth taking a look at it.

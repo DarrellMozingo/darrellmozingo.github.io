@@ -1,10 +1,6 @@
 ---
 title: "Stakeholder editable content that automatically gets pushed live"
 date: "2010-04-28"
-categories: 
-  - "build-management"
-tags: 
-  - "build-management"
 ---
 
 I finally got around to implementing help screens on our site recently. We needed a system that would enable our domain peeps to update the help text directly with no intervention from us, along with being easy to implement and maintain on our end. I ended up using flat HTML files and a jQuery modal dialog ([Colorbox](http://colorpowered.com/colorbox/)), which has support for asynchronously loading those HTML files from disk when needed. The one thing we didn't want to do with this solution was give our domain peeps production server access or the responsibility of keeping those HTML files up to date on the servers - I could only imagine the chaos that'd ensue from that.

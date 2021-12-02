@@ -1,10 +1,6 @@
 ---
 title: "Controlling IIS7 remotely with PowerShell"
 date: "2010-08-26"
-categories: 
-  - "misc"
-tags: 
-  - "misc"
 ---
 
 Our deployment script needed to do some basic IIS administrative tasks remotely on a Windows 2008 (non-R2) server, which runs IIS7, recently. Finding the information and fiddling around with it took me a good day and a half, so I thought I'd post the steps here to help someone else (more than likely myself) in the future:

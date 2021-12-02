@@ -1,10 +1,6 @@
 ---
 title: "ELMAH with ASP.NET MVC"
 date: "2009-02-19"
-categories: 
-  - "aspnet-mvc"
-tags: 
-  - "aspnet-mvc"
 ---
 
 We finally got to the point of needing some error reporting in our new application. We'd read about [ELMAH](http://code.google.com/p/elmah/) before and assumed we'd use that, but that was a while before we decided to go with the ASP.NET MVC framework instead of the traditional WebForms.

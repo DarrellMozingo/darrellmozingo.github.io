@@ -1,10 +1,6 @@
 ---
 title: "How *not* to hash passwords"
 date: "2010-11-19"
-categories: 
-  - "misc"
-tags: 
-  - "misc"
 ---
 
 We were stupid back in the day (OK, a year or two, but who's counting?). When we started our latest project it was a given that we'd be hashing passwords for storage. The most obvious and easiest way to do it was the good 'ol `(password + hash).GetHashCode()`. Done and done. We moved on to the next feature and never gave it a second thought.

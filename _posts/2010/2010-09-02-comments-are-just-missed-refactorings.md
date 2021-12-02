@@ -1,10 +1,6 @@
 ---
 title: "Comments are just missed refactorings"
 date: "2010-09-02"
-categories: 
-  - "musings"
-tags: 
-  - "musings"
 ---
 
 Ah comments, those delectable little nuggets of static information that routinely get out of sync with your code's intention. Actually, I'm sort of excited when I run into them though. See, to me they represent missed refactorings that are usually pretty easy to implement.

@@ -1,10 +1,6 @@
 ---
 title: "New Year, New Goals - 2009"
 date: "2009-01-02"
-categories: 
-  - "goals"
-tags: 
-  - "goals"
 ---
 
 John Miller has [a nice post](http://www.johnlmiller.com/archives/2008/12/28/challenge-yourself-this-year/) throwing his 2009 goals out there for everyone to see, and challenging everyone else to do the same. I think it's a great idea, so here's my list for 2009:

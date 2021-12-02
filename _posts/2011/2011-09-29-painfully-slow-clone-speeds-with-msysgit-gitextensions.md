@@ -1,10 +1,6 @@
 ---
 title: "Painfully slow clone speeds with msysgit & GitExtensions"
 date: "2011-09-29"
-categories: 
-  - "quickie"
-tags: 
-  - "quickie"
 ---
 
 **UPDATE:** See Paul's comment below - sounds like the latest cygwin upgrade process isn't as easy as it used to be.

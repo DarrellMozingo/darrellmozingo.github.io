@@ -1,10 +1,6 @@
 ---
 title: "Branch-Per-Feature in Subversion"
 date: "2009-12-04"
-categories: 
-  - "source-control"
-tags: 
-  - "source-control"
 ---
 
 ### Preamble

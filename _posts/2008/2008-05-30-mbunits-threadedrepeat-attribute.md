@@ -1,10 +1,6 @@
 ---
 title: "MbUnit's ThreadedRepeat Attribute"
 date: "2008-05-30"
-categories: 
-  - "testing"
-tags: 
-  - "testing"
 ---
 
 I ran into some old code in a utility library the other day that would open an XML file on a network share, read a few settings, and close it. This particular piece of code is called quite often in many situations, and often in larger loops, as the calling developer just sees a string being returned and is oblivious to the fact that it's pretty damn expensive to get that string.

@@ -1,10 +1,6 @@
 ---
 title: "Production deployment with your build script - Part 1"
 date: "2010-09-24"
-categories: 
-  - "build-management"
-tags: 
-  - "build-management"
 ---
 
 Pushing to production with a **script**? Crazy talk, right? Well, maybe not. Sure, there are lots of insane corporate setups out there where a script might not completely work, but for the vast majority of companies out there, this is totally within the realm of possibility. Maybe you want to save some steps when you're deploying, or maybe you want to stop forgetting some of those crazy "best practices" people always talk about (building in release mode? turning off debugging in the web.config? pre-compiling sites?). Whatever the reason, a deployment script is a great solution.

@@ -1,10 +1,6 @@
 ---
 title: "Consistent modal dialogs, the easy way"
 date: "2011-07-20"
-categories: 
-  - "web"
-tags: 
-  - "web"
 ---
 
 So we all know the default alert dialog box visually sucks. Any of the hundreds of jQuery modal plugins work wonderfully for replacing it with something a bit snazzier (although putting the information on the page for a user is even better, but that's for another post). The biggest problem with most of those dialogs are either the setup cost, or the memory cost:

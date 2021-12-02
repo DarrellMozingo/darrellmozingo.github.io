@@ -1,10 +1,6 @@
 ---
 title: "Cleveland Day of .NET Review"
 date: "2008-05-20"
-categories: 
-  - "reviews"
-tags: 
-  - "reviews"
 ---
 
 ![Cleveland Day of .NET](/assets/2008/CDoDN.png)I attended the first annual Cleveland Day of .NET this past Saturday, the 17th. Other than a few Microsoft launch-type events, I've never attended an actual community get together like this before, so it was a new experience for me.

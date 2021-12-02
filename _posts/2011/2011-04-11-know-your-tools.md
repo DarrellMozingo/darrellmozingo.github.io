@@ -1,10 +1,6 @@
 ---
 title: "Know your tools"
 date: "2011-04-11"
-categories: 
-  - "musings"
-tags: 
-  - "musings"
 ---
 
 ![Tools](/assets/2011/hobbywoodworkingbig2.jpg "Tools")

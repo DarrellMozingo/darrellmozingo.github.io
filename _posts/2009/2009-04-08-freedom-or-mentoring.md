@@ -1,10 +1,6 @@
 ---
 title: "Freedom or mentoring?"
 date: "2009-04-08"
-categories: 
-  - "musings"
-tags: 
-  - "musings"
 ---
 
 Let's take a hypothetical here and say you're looking at two jobs. They're at roughly similar companies which we'll call Company A and Company B (I know, I know, original, right?). You'd be working on similar projects at either and they both have comparable co-workers. For all intents and purposes they're equal, save for one glaring difference:

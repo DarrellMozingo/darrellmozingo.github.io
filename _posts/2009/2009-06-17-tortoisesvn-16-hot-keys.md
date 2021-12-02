@@ -1,10 +1,6 @@
 ---
 title: "TortoiseSVN 1.6+ Hot Keys"
 date: "2009-06-17"
-categories: 
-  - "quickie"
-tags: 
-  - "quickie"
 ---
 
 The latest releases of [Tortoise SVN](http://tortoisesvn.tigris.org/) (above 1.6) have taken away the ALT+O hot keys that used to be on every dialog (though it [sounds like they've added them back in to the trunk](http://www.nabble.com/Re:-Bug--Alt%2BO-on-commit-dialog-no-longer-OKs-it-p23553686.html)). This caused quite an uproar by many keyboarders, myself included.

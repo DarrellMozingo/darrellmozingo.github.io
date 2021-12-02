@@ -1,10 +1,6 @@
 ---
 title: "Success Story"
 date: "2008-07-18"
-categories: 
-  - "quickie"
-tags: 
-  - "quickie"
 ---
 
 Devlicio.us was holding a contest on personal success stories, so I entered with a short one about my current job. The environment and whole attitude of everyone here has changed **dramatically** in the recent past, and I'm quite proud to share the story.

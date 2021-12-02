@@ -1,10 +1,6 @@
 ---
 title: "ASP.NET MVC RC 1 Visual Studio Crash"
 date: "2009-01-28"
-categories: 
-  - "quickie"
-tags: 
-  - "quickie"
 ---
 
 After installing the newly released [ASP.NET MVC RC 1](http://weblogs.asp.net/scottgu/archive/2009/01/27/asp-net-mvc-1-0-release-candidate-now-available.aspx), Visual Studio started crashing on me when opening a View (.aspx filer), always with the following error in the Application event log:

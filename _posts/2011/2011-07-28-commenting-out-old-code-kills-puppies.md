@@ -1,10 +1,6 @@
 ---
 title: "Commenting out old code kills puppies"
 date: "2011-07-28"
-categories: 
-  - "musings"
-tags: 
-  - "musings"
 ---
 
 There, I said it. Actually, I'm kind of worried that title won't adequately state the intensity of this situation.

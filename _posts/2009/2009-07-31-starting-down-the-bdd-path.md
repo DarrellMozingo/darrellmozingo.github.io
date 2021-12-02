@@ -1,10 +1,6 @@
 ---
 title: "Starting Down The BDD Path"
 date: "2009-07-31"
-categories: 
-  - "testing"
-tags: 
-  - "testing"
 ---
 
 [Behavior Driven Development](http://dannorth.net/introducing-bdd)'s (BDD) meaning has, until recently, skipped right past me. I'd read about it and used it heavily for a week during [JP's Nothin' But .NET Boot Camp](http://darrell.mozingo.net/2008/12/03/nothin-but-net-training/), but when it came down to really seeing the value in it over the normal bunch of tests per test fixture TDD style, well, I simply didn't. The assertion naming with extension methods (`value.ShouldEqual(10)` vs. `Assert.AreEqual(10, value)`) and sentence-like test names (`Should_calculate_the_sum_of_all_hours_worked` vs `Method_Intial_Expected`) were pretty neat and we've been using them for a while now, but all the rest was lost on me. I mean, a whole class just for one or two assertions? Seemed like a lot.

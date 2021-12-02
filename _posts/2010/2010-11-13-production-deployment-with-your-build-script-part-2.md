@@ -1,10 +1,6 @@
 ---
 title: "Production deployment with your build script - Part 2"
 date: "2010-11-13"
-categories: 
-  - "build-management"
-tags: 
-  - "build-management"
 ---
 
 In the [first post](http://darrell.mozingo.net/2010/09/24/production-deployment-with-your-build-script-part-1/) I gave a quick overview of what our deployment script does and why you'd want one. This post will go over some of the pre-deployment steps we take. Most all of this code will probably be pretty self explanatory, but I know just having something to work off of is a huge boost to starting your own, so here ya go.

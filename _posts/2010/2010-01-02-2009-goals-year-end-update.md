@@ -1,10 +1,6 @@
 ---
 title: "2009 Goals - Year End Update"
 date: "2010-01-02"
-categories: 
-  - "goals"
-tags: 
-  - "goals"
 ---
 
 2009's over. How did I do on my [goals for last year](http://darrell.mozingo.net/2009/01/02/new-year-new-goals-2009/)? Let's see (comments in italics after each goal):

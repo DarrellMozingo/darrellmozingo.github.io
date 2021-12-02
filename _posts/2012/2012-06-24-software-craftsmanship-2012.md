@@ -1,10 +1,6 @@
 ---
 title: "Software Craftsmanship 2012"
 date: "2012-06-24"
-categories: 
-  - "events"
-tags: 
-  - "events"
 ---
 
 I attended the [Software Craftsmanship 2012](http://www.codemanship.co.uk/softwarecraftsmanship/) conference last Thursday up at Bletchley Park. It was an awesome event ran mostly by [Jason Gorman](http://www.codemanship.co.uk/parlezuml/blog/) and the staff at the park. The company I work for, 7digital, sponsored the event so all ticket proceeds went directly to help the park, which is very cool. They're in desperate need for funding and this event has brought in a hefty amount the past few years.

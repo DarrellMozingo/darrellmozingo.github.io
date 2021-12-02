@@ -1,10 +1,6 @@
 ---
 title: "The Pit of Success"
 date: "2011-06-27"
-categories: 
-  - "design-principles"
-tags: 
-  - "design-principles"
 ---
 
 ![Pit of Success](/assets/2011/pit-of-success.jpg "Pit of Success")

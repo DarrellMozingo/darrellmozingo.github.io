@@ -1,10 +1,6 @@
 ---
 title: "Auditing with NHibernate Listeners"
 date: "2009-08-31"
-categories: 
-  - "nhibernate"
-tags: 
-  - "nhibernate"
 ---
 
 We recently had a requirement to do auditing in our application, complete with storing the old and new values. Previous applications had used a method that took all that information in an wrote it to the database, giving us a lot of control of what we logged and when, but it required us to call it in every needed situation or we'd lose the capability, not to mention it made reading the code horrid.

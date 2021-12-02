@@ -1,10 +1,6 @@
 ---
 title: "Introducing Taskie"
 date: "2010-12-16"
-categories: 
-  - "taskie"
-tags: 
-  - "taskie"
 ---
 
 A little over a year ago I offhandedly mentioned the [scheduled task program](http://darrell.mozingo.net/2009/09/15/injecting-all-instances-of-a-given-type/) I wrote for one our products at work. Well, I'm finally releasing a stripped down version as open source.

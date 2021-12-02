@@ -1,10 +1,6 @@
 ---
 title: "jTemplates - Client-Side Templating With jQuery"
 date: "2009-04-30"
-categories: 
-  - "javascript"
-tags: 
-  - "javascript"
 ---
 
 We're using ASP.NET MVC on my current project at work, and we're heavily exploring jQuery and other client side tools for AJAX effects. One of the first areas where we needed it was a screen where the user enters a zip code and a list of various values get returned based on that code. We got it working just fine rather quickly, but only by slinging some nasty looking spaghetti code in the JavaScript, so we started looking around for a possible solution.

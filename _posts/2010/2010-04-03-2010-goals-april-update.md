@@ -1,10 +1,6 @@
 ---
 title: "2010 Goals - April Update"
 date: "2010-04-03"
-categories: 
-  - "goals"
-tags: 
-  - "goals"
 ---
 
 First quarter's down. In full disclosure fashion, here's how I'm doing so far:

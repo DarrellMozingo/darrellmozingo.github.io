@@ -1,10 +1,6 @@
 ---
 title: "Testing tips"
 date: "2010-12-27"
-categories: 
-  - "testing"
-tags: 
-  - "testing"
 ---
 
 Just some quick testing tips I've found helpful over the last few years.

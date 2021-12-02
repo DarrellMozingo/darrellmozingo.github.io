@@ -1,10 +1,6 @@
 ---
 title: "The Strategy Pattern and Filtering"
 date: "2008-05-16"
-categories: 
-  - "design-patterns"
-tags: 
-  - "design-patterns"
 ---
 
 The strategy pattern is a way to inject algorithms into a chunk of code, or as I like to think of it, basically a way to refactor out multiple lines of code and pass them into a method. Let's look at an example.

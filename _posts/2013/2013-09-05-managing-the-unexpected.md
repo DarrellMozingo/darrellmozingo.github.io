@@ -1,10 +1,6 @@
 ---
 title: "Managing the Unexpected"
 date: "2013-09-05"
-categories: 
-  - "books"
-tags: 
-  - "books"
 ---
 
 I recently read [Managing the Unexpected](http://www.amazon.com/Managing-Unexpected-Resilient-Performance-Uncertainty/dp/0787996491). It's a brilliant book about running highly resilient organisations. While it's mostly based on high-risk organisations like nuclear power plants and wild fire firefighting units, it's still highly applicable to any company just trying to increase their resiliency to failures and outages.

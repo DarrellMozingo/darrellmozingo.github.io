@@ -1,10 +1,6 @@
 ---
 title: "Strongly Typed Views With Mvc Contrib - Part 3"
 date: "2009-06-20"
-categories: 
-  - "aspnet-mvc"
-tags: 
-  - "aspnet-mvc"
 ---
 
 [Part 1](http://darrell.mozingo.net/2009/04/30/strongly-typed-views-with-mvc-contrib-part-1/) discussed the benefits of a strongly typed view and [part 2](http://darrell.mozingo.net/2009/05/23/strongly-typed-views-with-mvc-contrib-part-2/) went through the typical usage of the Mvc Contrib project's fluent HTML library. Now we'll take a look at a neater usage for it - validation.

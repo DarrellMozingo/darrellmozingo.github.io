@@ -1,12 +1,6 @@
 ---
 title: "Getting started with TDD"
 date: "2011-09-16"
-categories: 
-  - "musings"
-  - "testing"
-tags: 
-  - "musings"
-  - "testing"
 ---
 
 When I first read about TDD and saw all the super simple examples that litter the inter-tubes, like the calculator that does nothing but add and subtract, I thought the whole thing was pretty stupid and its approach to development was too naive. Thankfully I didn't write the practice off - I started trying it, plugging away here and there. One thing I eventually figured out was that TDD is a lot like math. You start out easy (addition/subtraction), and continue building on those fundamentals as you get used to it.

@@ -1,10 +1,6 @@
 ---
 title: "Continuous Delivery"
 date: "2011-12-31"
-categories: 
-  - "build-management"
-tags: 
-  - "build-management"
 ---
 
 I recently finished reading [Continuous Delivery](http://www.amazon.com/gp/product/0321601912). It's an excellent book that manages to straddle that "keep it broad to help lots of people yet specific enough to actually give value" line pretty well. It covers testing strategies, process management, deployment strategies, and more.

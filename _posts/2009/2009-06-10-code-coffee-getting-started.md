@@ -1,10 +1,6 @@
 ---
 title: "Code & Coffee - Getting Started"
 date: "2009-06-10"
-categories: 
-  - "events"
-tags: 
-  - "events"
 ---
 
 We had a couple of new guys join us for last week's [Code & Coffee](http://darrell.mozingo.net/2009/05/08/code-and-coffee/), and during the 15 minutes or so we spent helping get them up to speed I realized a quick "getting started" post might be in order to help future attendees.

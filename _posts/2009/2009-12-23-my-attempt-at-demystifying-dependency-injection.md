@@ -1,10 +1,6 @@
 ---
 title: "My attempt at demystifying dependency injection"
 date: "2009-12-23"
-categories: 
-  - "design-principles"
-tags: 
-  - "design-principles"
 ---
 
 I think I can safely say I finally "get" dependency injection (DI) and the need for a framework (such as [StructureMap](http://structuremap.sourceforge.net), [Ninject](http://ninject.org/), Windsor, or [any other](http://www.hanselman.com/blog/ListOfNETDependencyInjectionContainersIOC.aspx)). More importantly, I think I finally get the best way to use it in an application. Its taken me a bit to get to this point, and almost everything I've read and heard on the subject was very _hand-wavy_, at least to me. So here's my attempt at demystifying the subject along with a straight forward way to go about using it in your application, something I wish I could have heard a while ago.

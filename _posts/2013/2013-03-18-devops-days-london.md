@@ -1,10 +1,6 @@
 ---
 title: "DevOps Days London 2013"
 date: "2013-03-18"
-categories: 
-  - "events"
-tags: 
-  - "events"
 ---
 
 ![DevOpsDays](/assets/2013/bridge-the-gap-300x225.png) I spent this past Friday & Saturday at [DevOpsDays London](http://www.devopsdays.org/events/2013-london/). There's been a few reviews written already about various bits (and a nice collection of resources by my co-worker [Anna](http://annaken.blogspot.co.uk/2013/03/devops-community-resources.html)), and I wanted to throw my thoughts out there too. The talks each morning were all very good and well presented, but for me the real meat of the event for me was the 3 tracks of Open Spaces each afternoon, along with various break time and hallway discussions. I didn't take as detailed notes as others did, but here's the bits I took away from each Open Space:

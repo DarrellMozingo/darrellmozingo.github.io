@@ -1,10 +1,6 @@
 ---
 title: "Injecting all instances of a given type"
 date: "2009-09-15"
-categories: 
-  - "misc"
-tags: 
-  - "misc"
 ---
 
 I'm sure I'm a little late to the game here, but I recently stumbled across how to do collection injection with [Structure Map](http://structuremap.sourceforge.net/Default.htm). I've known it was possible, and have seen it hinted at in other blogs posts for a while, but I just didn't know how exactly it was done.

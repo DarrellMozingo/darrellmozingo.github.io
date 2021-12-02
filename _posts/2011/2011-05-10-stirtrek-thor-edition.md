@@ -1,10 +1,6 @@
 ---
 title: "StirTrek: Thor Edition"
 date: "2011-05-10"
-categories: 
-  - "events"
-tags: 
-  - "events"
 ---
 
 ![thor](/assets/2011/thor.png "thor")

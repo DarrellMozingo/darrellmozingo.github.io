@@ -1,10 +1,6 @@
 ---
 title: "Revisiting my automated build & continuous integration setup"
 date: "2010-04-02"
-categories: 
-  - "build-management"
-tags: 
-  - "build-management"
 ---
 
 A while back I wrote a small series on creating a basic build script and setting up a build server ([part 1](http://darrell.mozingo.net/2008/08/28/automated-builds-continuous-integration-part-1/), [part 2](http://darrell.mozingo.net/2008/09/26/automated-builds-continuous-integration-part-2/), and [part 3](http://darrell.mozingo.net/2008/12/31/automated-builds-continuous-integration-part-3/)). I used [NAnt](http://nant.sourceforge.net/) and [CruiseControl.NET](http://confluence.public.thoughtworks.org/display/CCNET/Welcome+to+CruiseControl.NET) in that series, but alluded to a few other options for each. I recently got around to switching our build script from NAnt to [psake](http://code.google.com/p/psake/), which is written in [PowerShell](http://technet.microsoft.com/en-us/scriptcenter/dd742419.aspx), and switching our build server from CruiseControl.NET to JetBrain's [TeamCity](http://www.jetbrains.com/teamcity/). I'll give a quick overview of our new build script here, which I'll use to build on in future posts showing a few of the more interesting things that suddenly became much easier with this setup, and in a few cases, possible at all.

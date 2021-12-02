@@ -1,10 +1,6 @@
 ---
 title: "Code and Coffee"
 date: "2009-05-08"
-categories: 
-  - "events"
-tags: 
-  - "events"
 ---
 
 ![Coffee and Code](/assets/2009/coffeeandcode.jpg "Coffee and Code")

@@ -1,10 +1,6 @@
 ---
 title: "Production deployment with your build script - Part 4"
 date: "2010-12-03"
-categories: 
-  - "build-management"
-tags: 
-  - "build-management"
 ---
 
 The [first post](http://darrell.mozingo.net/2010/09/24/production-deployment-with-your-build-script-part-1/) gave a quick overview of what our deployment script does and why you'd want one, the [second post](http://darrell.mozingo.net/2010/11/12/production-deployment-with-your-build-script-part-2/) went over pre-deployment steps, and the [third post](http://darrell.mozingo.net/2010/11/24/production-deployment-with-your-build-script-part-3/) in this series covered the actual site's deployment. This post will go over a few of the post-deployment steps we take after publishing our site. Like the last posts, most all of this code will probably be pretty self explanatory.

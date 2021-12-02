@@ -1,10 +1,6 @@
 ---
 title: "Clever vs Explicit"
 date: "2010-08-20"
-categories: 
-  - "musings"
-tags: 
-  - "musings"
 ---
 
 When we all start out developing, either through classes in high school/college or slowly on our own time, we inevitably want to write code thats super clever. Like, use-3-lines-to-express-what-used-to-take-20-lines type of clever. We see less code and we're pleased. All is good and well with the world.

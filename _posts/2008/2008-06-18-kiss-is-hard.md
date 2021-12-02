@@ -1,10 +1,6 @@
 ---
 title: "KISS Is Hard"
 date: "2008-06-18"
-categories: 
-  - "testing"
-tags: 
-  - "testing"
 ---
 
 ![KISS Logo](/assets/2008/kisslogo.png "KISS Logo")No, I'm not referring to [the band](http://en.wikipedia.org/wiki/Kiss_(band)), but [the KISS principle](http://en.wikipedia.org/wiki/KISS_principle) (Keep It Simple, Stupid), and its close cousin, the idea of [YAGNI](http://en.wikipedia.org/wiki/You_Ain%27t_Gonna_Need_It) (You Ain't Gonna Need It).

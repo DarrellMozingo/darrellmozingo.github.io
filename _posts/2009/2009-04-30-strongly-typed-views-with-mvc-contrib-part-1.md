@@ -1,10 +1,6 @@
 ---
 title: "Strongly Typed Views With Mvc Contrib - Part 1"
 date: "2009-04-30"
-categories: 
-  - "aspnet-mvc"
-tags: 
-  - "aspnet-mvc"
 ---
 
 Out of the box, ASP.NET MVC uses weakly typed extension methods to generate various HTML elements (inputs, check boxes, select lists, etc). By weakly typed I mean they require strings, which are actually strings based on the properties of your view model. For instance, given this view model:

@@ -1,10 +1,6 @@
 ---
 title: "When's the best time to write tests?"
 date: "2009-08-19"
-categories: 
-  - "testing"
-tags: 
-  - "testing"
 ---
 
 I often hear people get apathetic about testing, especially on brown field applications. "There's already so much untested code," they say, or "we'll get to it when we start this next portion of the application, we swear." Obviously this gets put off to the start of the next feature, and the next, and the next, ad infinitum. All the while, there's more untested code piling up, helping their first argument, and the code base on a whole is becoming more rigid and jumbled up, almost guaranteeing they'll never have the time to untangle it and add tests after the fact.

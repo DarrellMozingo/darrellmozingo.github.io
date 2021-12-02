@@ -1,10 +1,6 @@
 ---
 title: "Automatically Run Your Unit Tests During Compilation"
 date: "2008-06-30"
-categories: 
-  - "quickie"
-tags: 
-  - "quickie"
 ---
 
 We have a steadily growing collection of small extension methods (including the usual `.IsNullOrEmpty()`, `.To<T>()`, etc.), along with corresponding unit tests, setup at my work. I spent some time a few weeks ago increasing the test coverage from around 70% to 100%, along with making the unit tests a bit more robust.

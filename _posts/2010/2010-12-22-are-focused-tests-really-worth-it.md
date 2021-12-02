@@ -1,10 +1,6 @@
 ---
 title: "Are focused tests really worth it?"
 date: "2010-12-22"
-categories: 
-  - "testing"
-tags: 
-  - "testing"
 ---
 
 We recently had the requirement to start filling in fillable PDF's. The fields in fillable PDF's are just string names, with text boxes that get string values, check boxes that have special values, etc. I decided to create model classes to represent each PDF, then mapping classes to map each of the model's properties to a field in the PDF. I ended up with something like:

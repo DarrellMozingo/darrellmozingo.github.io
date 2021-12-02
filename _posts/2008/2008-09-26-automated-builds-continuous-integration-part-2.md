@@ -15,7 +15,7 @@ In [Part 1](http://darrell.mozingo.net/2008/08/28/automated-builds-continuous-in
 
 Notice that those tools, NAnt/MbUnit/NCover/etc, are actually checked into the project. They're not sitting in my Program Files directory or on some network share. Each project has a copy of all the tools it needs (and everything those tools need to run), which enables not only the build server to pull down everything it needs from source control, but new developers as well. One checkout command and they're good to build and run the project. This is **definitely** a time saver, and, if nothing else, I highly recommend implementing this practice or one similar.
 
-For reference, I'll be using NAnt 0.85 (available [here](http://sourceforge.net/project/downloading.php?groupname=nant&filename=nant-0.85-bin.zip&use_mirror=internap)), MbUnit 2.4.197 (available [here](http://mb-unit.googlecode.com/files/MbUnit-2.4.197.exe)), NCover 1.5.8 (one of the last free versions available before they became a [commercial product](http://www.ncover.com/) - and while this version doesn't support some of the newer stuff in C# 3 as their commercial version does, it'll work for our purposes - available [here](http://www.ncover.com/download/download_file?filename=NCover-1.5.8.zip)), and NCoverExplorer 1.4.0.7 (which is now also commercial and integrated into NCover, but I have the latest freely copy available [here](http://darrell.mozingo.net/wp-content/uploads/2008/09/NCoverExplorer-1.4.0.7.zip)).
+For reference, I'll be using NAnt 0.85 (available [here](http://sourceforge.net/project/downloading.php?groupname=nant&filename=nant-0.85-bin.zip&use_mirror=internap)), MbUnit 2.4.197 (available [here](http://mb-unit.googlecode.com/files/MbUnit-2.4.197.exe)), NCover 1.5.8 (one of the last free versions available before they became a [commercial product](http://www.ncover.com/) - and while this version doesn't support some of the newer stuff in C# 3 as their commercial version does, it'll work for our purposes - available [here](http://www.ncover.com/download/download_file?filename=NCover-1.5.8.zip)), and NCoverExplorer 1.4.0.7 (which is now also commercial and integrated into NCover).
 
 ## The Build Script
 
@@ -66,7 +66,5 @@ Which runs through and results in a nice little "BUILD SUCCEEDED" message:
 Gives me the warm and fuzzies every time.
 
 Well, that's pretty much it. A very basic build script, but it gets the job done. I'd recommend poking around the build scripts of some of the more popular open source projects to get better idea of what these scripts are really capable of automating for you. Take a look at [Ninject's](http://ninject.org/) for building a public framework that targets different platforms, or [Subtext's](http://subtextproject.com/) for building a website solution.
-
-A skeleton project setup with this build script, complete with the needed tools and everything, can be downloaded [here](http://darrell.mozingo.net/wp-content/uploads/2008/09/MyExtensions-BuildScriptsAndCI-Part2.zip).
 
 In Part 3 I'll go over setting up a basic build server using Cruise Control.NET. The build server basically just calls out to this build script, so, thankfully, the bulk of the work is already done.

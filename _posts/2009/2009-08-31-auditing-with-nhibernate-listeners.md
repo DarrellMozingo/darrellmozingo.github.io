@@ -109,5 +109,3 @@ On line 29, we're delegating to NHibernate to tell us which properties in the en
 As I've mentioned, this works just fine for most applications. The first issue we ran into was Components (in the NHibernate sense). They're represented as a single property changed on the entity, so all you get is the `ToString` on the object. Fortunately there's an easy way to see if the property is a Component (hint: `@event.Persister.PropertyTypes[dirtyFieldIndex] is ComponentType` before line 43), so we use reflection to loop through the properties by hand and compare them for dirtiness.
 
 There you go, damn near complete old & new value auditing, just like mom would have always wanted. Not perfect, I'm sure, but we've been using a modified version of this for a while and haven't had any problems.
-
-In the working example, available [here](/wp-content/uploads/2009/08/NHibernateAuditing.zip), I run through an edit and display the audit results in a console app using Sqlite. Give it a try, and let me know if you find this helpful at all.

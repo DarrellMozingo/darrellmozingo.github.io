@@ -216,5 +216,3 @@ So perhaps other than the StructureMap related code (if you don't already know t
 ### Conclusion
 
 One thing to remember when looking for OCP violations in your code base is that "closed for modifications" should be taken within context. Fixing bugs, adding complete new features, etc, will obviously require modifications to something. You're not going to create every class in your system and never touch them again. Within reason, you should apply the Open-Closed Principle to your code as much as possible. It makes it simpler to understand on the micro and macro level once your familiar with some of the more common patterns, and it helps reduce the possibility of introducing bugs from future additions.
-
-The code from this post is available [here](http://darrell.mozingo.net/wp-content/uploads/2010/05/ocp_in_action.zip).

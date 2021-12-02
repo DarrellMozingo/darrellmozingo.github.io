@@ -94,5 +94,3 @@ public string Name { get; set; }
 The outputted HTML would be:
 
 Neat, huh? In our current project, we're using these to automatically denote required fields, and in conjunction with [xVal](http://www.codeplex.com/xval), require those fields complete with client side checks. All from a few simple attributes.
-
-A zip of the final project can be found [here](http://darrell.mozingo.net/wp-content/uploads/2009/06/MvcContribFluentHtml.zip), for reference.

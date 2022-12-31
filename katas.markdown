@@ -9,7 +9,7 @@ permalink: /katas/
 * [Guilded Rose](http://iamnotmyself.com/2011/02/13/refactor-this-the-gilded-rose-kata)
 * [Bowling Game](http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata)
 * [String calculator](http://osherove.com/tdd-kata-1) (and [part 2](http://osherove.com/tdd-kata-2))
-* [Big collection of random katas](http://codekata.pragprog.com/2007/01/code_kata_backg.html#more)
+* [Big collection of random katas](http://codekata.com)
 * String stack - have it throw an exception for popping an empty stack, pop a single item, and pop two items correctly
 * Dollar amount to wording - convert a given dollar amount (say $1,132.53) to wording like you'd use on your checks ("one thousand, one hundred thirty two and 53/100")
 * [App Katas](http://geekswithblogs.net/theArchitectsNapkin/archive/2011/06/25/appkata---enter-the-next-level-of-programming-exercises.aspx)
@@ -22,3 +22,5 @@ permalink: /katas/
 * [Composition Kata](http://odetocode.com/blogs/scott/archive/2013/02/15/the-composition-kata.aspx)
 * [The Xmas Train Kata](https://codemanship.wordpress.com/2019/12/18/the-xmas-train-kata)
 * [Architecture katas](http://nealford.com/katas)
+* [Kata Log](https://kata-log.rocks)
+
